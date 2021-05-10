@@ -2566,7 +2566,6 @@ footer .copyright span:last-child::after {
 }
 
 .pricing-table {
-    padding: 0 0 100px;
     max-width: 1050px;
     margin: auto;
 }
@@ -2616,6 +2615,12 @@ footer .copyright span:last-child::after {
 .plan-cost {
     font-size: 45px;
 }
+@media screen and (max-width:700px) {
+	.plan-cost{
+		font-size: 20px;
+	}
+	
+}
 
 
 .monthly {
@@ -2652,3 +2657,13 @@ footer .copyright span:last-child::after {
     -moz-box-shadow: -1px 9px 46px -17px rgba(43, 43, 43, 1);
     box-shadow: -1px 9px 46px -17px rgba(43, 43, 43, 1);
 }
+ @media screen and (max-width:300px) {
+	 .output h2{
+		 font-size: 2rem;
+	 }
+	 .col-twelve h2{
+		font-size: 2rem;
+
+	 }
+	 
+ }
