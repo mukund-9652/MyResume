@@ -450,28 +450,25 @@
    		<div class="col-twelve">
 
           
-            <form action="https://formspree.io/f/mjvjvqdn" method="POST">
- 			 <label>
-   			 Your email:
-    			<input type="email" name="_replyto">
- 			 </label>
-  			<label>
-    			Your message:
-    		<textarea name="message"></textarea>
-  			</label>
+            <form action="POST" data-netlify="true">
+					<label>
+						<input type="text" name="name" placeholder="Type your Name">
+					</label>
+					<label>
+						<input type="email" name="email"  placeholder="Type your E-mail">
+					</label>
+					<label>
+						<textarea name="message" placeholder="Type your Message"></textarea>
+					</label>
+					<div class="field"> 
+						<div class="recaptcha" data-netlify-recaptcha="true">
 
-  <!-- your other form fields go here -->
+						</div>
+					</div>
+		<!-- your other form fields go here -->
 
-  			<button type="submit">Send</button>
-</form> 
-
-            
-            <div id="message-warning">            	
-            </div>            
-            
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-      		</div>
+					<button type="submit">Send</button>
+			</form> 
 
          </div> 
    		
