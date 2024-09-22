@@ -1,0 +1,22 @@
+/*--------------------------------------------------------------
+  17. Error page
+----------------------------------------------------------------*/
+.cs_not_found.cs_style_1 {
+  min-height: 100vh;
+  padding: 50px 0;
+  .cs_img {
+    margin-bottom: 40px;
+  }
+  .cs_title {
+    margin-bottom: 36px;
+    @media (max-width: 575px) {
+      font-size: 36px;
+    }
+  }
+  @media (max-width: 1400px) {
+    .cs_img,
+    .cs_title {
+      margin-bottom: 25px;
+    }
+  }
+}

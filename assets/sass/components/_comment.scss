@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+  11. Comments
+----------------------------------------------------------------*/
+.cs_comment_wrap {
+  padding: 10px 30px;
+  margin-bottom: 40px;
+}
+.cs_comment.cs_style_1 {
+  padding: 15px 0;
+  .cs_comment_avater_image {
+    height: 60px;
+    width: 60px;
+    flex: none;
+    border-radius: 50%;
+  }
+  .cs_comment_author {
+    margin-bottom: 5px;
+  }
+  .cs_comment_title {
+    color: #4e4d5a;
+    margin-bottom: 10px;
+  }
+  .cs_comment_date_and_title {
+    @media (min-width: 767px) {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+    }
+  }
+  .cs_comment_info > div {
+    margin-bottom: 15px;
+  }
+}

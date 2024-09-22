@@ -1,0 +1,344 @@
+/*--------------------------------------------------------------
+  21. Blog
+----------------------------------------------------------------*/
+.cs_blog.cs_style_1 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 100px;
+  border-bottom: 1px solid rgba($accent2, 0.06);
+  display: flex;
+  position: relative;
+  @media (max-width: 991px) {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+  .cs_blog_info {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 40px;
+    @media (min-width: 1400px) {
+      padding-right: 100px;
+    }
+    @media (max-width: 575px) {
+      padding-right: 0;
+    }
+  }
+  .cs_blog_date {
+    position: absolute;
+    left: -257px;
+    top: 0;
+    span {
+      margin-top: 10px;
+      color: #767682;
+    }
+  }
+
+  .cs_circle_btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .cs_blog_thumbnail {
+    display: inline-block;
+    margin-right: 40px;
+    height: 115px;
+    width: 120px;
+    max-height: 120px;
+    max-width: 130px;
+    border-radius: 10px;
+    border: 2px solid $white;
+    background: $white;
+    box-shadow: 0px 1px 2px 0px rgba(52, 46, 173, 0.12);
+    overflow: hidden;
+    @media (max-width: 575px) {
+      height: initial;
+      width: initial;
+    }
+  }
+  .cs_blog_title {
+    margin-bottom: 12px;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    border: 0;
+    padding-bottom: 0;
+  }
+
+  &:hover {
+    .cs_circle_btn.cs_style_1 {
+      background-color: $accent;
+      color: $white;
+    }
+  }
+}
+
+.cs_blog_wrap {
+  .cs_blog.cs_style_1 {
+    @media (min-width: 1400px) {
+      padding-left: 150px;
+      .cs_blog_date {
+        left: -307px;
+      }
+    }
+  }
+}
+
+.cs_blog.cs_style_2 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba($accent2, 0.06);
+  display: flex;
+  gap: 40px;
+  position: relative;
+  @media (max-width: 1199px) {
+    gap: 25px;
+  }
+  @media (max-width: 991px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
+  .cs_blog_info {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: 1199px) {
+      // display: initial;
+    }
+  }
+
+  .cs_blog_avater {
+    img {
+      height: 55px;
+      width: 55px;
+      border-radius: 50%;
+      border: 1px solid $accent2;
+    }
+    h2 {
+      opacity: 0.9;
+    }
+  }
+
+  .cs_circle_btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .cs_blog_thumbnail {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    border: 2px solid $white;
+    box-shadow: 0px 1px 2px 0px rgba(52, 46, 173, 0.12);
+    overflow: hidden;
+    flex: none;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 1400px) {
+      height: 142px;
+      width: 142px;
+    }
+    @media (max-width: 1199px) {
+      height: 120px;
+      width: 120px;
+      @media (max-width: 575px) {
+        height: initial;
+        width: initial;
+      }
+    }
+  }
+  .cs_blog_title {
+    margin-bottom: 15px;
+  }
+  &:hover {
+    .cs_circle_btn.cs_style_1 {
+      background-color: $accent2;
+      color: $white;
+    }
+  }
+}
+
+.cs_blog.cs_style_3 {
+  padding: 0 20px;
+  padding-top: 20px;
+  box-shadow: 0px 1px 2px 0px rgba(26, 23, 96, 0.1),
+    0px 10px 40px 0px rgba(14, 12, 51, 0.1);
+  &:hover {
+    box-shadow: 0 50px 40px -50px rgba(26, 23, 96, 0.15),
+      0 50px 40px -50px rgba(14, 12, 51, 0.15);
+  }
+  .cs_blog_thumbnail {
+    max-height: 380px;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 25px;
+  }
+  .cs_blog_info {
+    padding: 0 20px;
+    padding-bottom: 35px;
+  }
+  .cs_blog_title {
+    margin-bottom: 35px;
+    color: #36345b;
+  }
+  .cs_blog_avater img {
+    border: 1px solid $accent2;
+    border-radius: 50%;
+  }
+}
+
+.cs_blog.cs_style_4 {
+  .cs_blog_meta {
+    border: 1px solid #ffe6e2;
+    background: #fff3f1;
+    padding: 2px 22px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .cs_blog_title {
+    margin-bottom: 10px;
+  }
+  .cs_blog_text {
+    margin-bottom: 40px;
+    @media (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+  .cs_blog_author_name {
+    display: inline-block;
+    margin-left: 35px;
+  }
+  @media (max-width: 1199px) {
+    .cs_font_36 {
+      font-size: 32px;
+    }
+  }
+}
+.cs_blog_group_1 {
+  display: grid;
+  grid-gap: 0px 60px;
+  grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 1199px) {
+    grid-gap: 0px 30px;
+  }
+  @media (max-width: 1199px) {
+    display: block;
+  }
+  .cs_blog.cs_style_3 {
+    grid-column: span 2;
+    grid-row: span 3;
+    @media (max-width: 991px) {
+      margin-bottom: 30px;
+    }
+  }
+  .cs_blog.cs_style_2 {
+    grid-column: span 2;
+  }
+  > * {
+    &:nth-child(2) {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+/*----------Blog Details------------*/
+.cs_blog_details.cs_style_1 {
+  .cs_blog_title {
+    margin-bottom: 10px;
+  }
+  .cs_blog_meta_items {
+    gap: 15px 45px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    @media (max-width: 575px) {
+      gap: 15px 30px;
+    }
+  }
+
+  .cs_image_box.cs_style_5 {
+    margin-top: 0;
+    margin-bottom: 55px;
+  }
+
+  .cs_blog_text {
+    margin-bottom: 30px;
+    @media (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .cs_blog_subtitle {
+    margin-bottom: 20px;
+  }
+  .cs_blog_image_inside {
+    margin-bottom: 30px;
+    @media (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+  .cs_meta.cs_style_1 {
+    margin-bottom: 40px;
+    margin-top: 50px;
+  }
+}
+
+/*----------Responsive------------*/
+@media only screen and (max-width: 991px) {
+  .cs_blog.cs_style_1 {
+    padding-left: 0;
+
+    .cs_blog_thumbnail {
+      margin-right: 24px;
+    }
+
+    .cs_blog_info {
+      justify-content: flex-start;
+    }
+
+    .cs_blog_date {
+      position: initial;
+      margin-bottom: 5px;
+      & > * {
+        font-size: 16px;
+        display: inline-block;
+        font-weight: 500;
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .cs_blog.cs_style_1 {
+    display: block;
+    .cs_blog_thumbnail {
+      margin: 0;
+      margin-bottom: 10px;
+      max-width: initial;
+      max-height: initial;
+      min-height: 100%;
+      min-width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

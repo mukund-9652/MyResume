@@ -1,0 +1,63 @@
+/*--------------------------------------------------------------
+  24. FunFact
+----------------------------------------------------------------*/
+.cs_funfact.cs_style_1 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #19155b;
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.cs_funfact_2_wrap {
+  position: relative;
+  padding-top: calc(116px - 40px);
+  @media (max-width: 575px) {
+    padding-top: 40px;
+  }
+  .cs_funfact_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+  }
+}
+.cs_funfact.cs_style_2 {
+  position: relative;
+  .cs_funfact_number {
+    height: 105px;
+    background: linear-gradient(130deg, #fff 0%, #e3dfff 12.12%, #cfdff9 100%);
+    padding: 10px;
+  }
+  .cs_funfact_text {
+    padding: 10px;
+    min-height: 80px;
+    color: #2a2851;
+  }
+  .cs_funfact_in {
+    position: relative;
+    z-index: 99;
+    background-position: bottom right;
+    border-radius: 20px 20px 0 20px;
+    overflow: hidden;
+  }
+  .cs_overlay {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    svg {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 370px) {
+    .cs_font_24 {
+      font-size: 22px;
+    }
+  }
+}

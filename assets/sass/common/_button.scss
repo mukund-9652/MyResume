@@ -1,0 +1,106 @@
+/*--------------------------------------------------------------
+  5. Button
+----------------------------------------------------------------*/
+.cs_btn.cs_style_1 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: $accent;
+  color: #fff;
+  font-weight: 600;
+  padding: 13px 37px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  text-shadow: 0px 40px 0px currentColor;
+
+  span {
+    transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &:hover span {
+    transform: translateY(-40px);
+  }
+  @media (max-width: 991px) {
+    height: 46px;
+    padding: 0 30px;
+  }
+}
+
+/*-----------Circle Button------------*/
+.cs_circle_btn.cs_style_1 {
+  height: 36px;
+  width: 36px;
+  background: rgba($accent, 0.1);
+  display: inline-flex;
+  cursor: pointer;
+  overflow: hidden !important;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  > * {
+    position: absolute;
+    transition: inherit;
+    &:first-child {
+      transform: translate(-20px, 20px);
+    }
+  }
+  &:hover > * {
+    transform: translate(0, 0);
+    transition: inherit;
+    &:last-child {
+      transform: translate(20px, -20px);
+    }
+  }
+}
+.cs_circle_btn.cs_style_1.cs_type_1 {
+  background: rgba($accent2, 0.1);
+}
+
+/*-----------Button text------------*/
+.cs_text_btn {
+  position: relative;
+  transition: all 0.4s ease;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: currentColor;
+    transition: all 0.4s ease;
+  }
+  &::before {
+    height: 1px;
+    width: 100%;
+  }
+  &::after {
+    bottom: -1px;
+    height: 2px;
+    width: 0;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+/*----------Player button------------*/
+.cs_player.cs_style_1 {
+  height: 62px;
+  width: 62px;
+  animation: pulse-border 1s linear infinite;
+  @keyframes pulse-border {
+    0% {
+      box-shadow: 0 0 0 0 rgba($white, 0.3), 0 0 0 20px rgba($white, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba($white, 0.3), 0 0 0 50px rgba($white, 0);
+    }
+  }
+  &:hover {
+    scale: 1.5;
+  }
+}

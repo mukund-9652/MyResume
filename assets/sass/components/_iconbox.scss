@@ -1,0 +1,226 @@
+/*--------------------------------------------------------------
+  13. Iconbox
+----------------------------------------------------------------*/
+.cs_iconbox.cs_style_1 {
+  border-radius: 20px 20px 0px 0px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 12.5%, #fff 100%);
+  box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 991px) {
+    margin-bottom: 60px;
+  }
+
+  .cs_iconbox_in {
+    padding: 1px 15px 25px;
+    @media (min-width: 1400px) {
+      padding: 1px 30px 25px;
+    }
+  }
+  .cs_iconbox_icon {
+    height: 70px;
+    width: 70px;
+    margin-top: -35px;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.12);
+    margin-bottom: 22px;
+    padding: 10px;
+  }
+  .cs_iconbox_mini_title {
+    letter-spacing: 1.5px;
+    line-height: 1.5em;
+    margin-bottom: 0;
+  }
+  .cs_iconbox_title {
+    line-height: 1.35em;
+    line-height: 1.2em;
+    margin-bottom: 15px;
+  }
+  .cs_iconbox_subtitle {
+    margin-bottom: 32px;
+  }
+  .cs_iconbox_btn {
+    position: relative;
+    &:hover {
+      .cs_circle_btn {
+        color: $white;
+        background-color: $accent;
+      }
+    }
+  }
+  .cs_iconbox_btn_text {
+    padding-right: 30px;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 105px;
+      background-color: #e7e6f4;
+      top: 50%;
+      left: 100%;
+    }
+  }
+  &:hover {
+    .cs_circle_btn.cs_style_1 {
+      background-color: $accent;
+      color: $white;
+    }
+  }
+  &:hover .cs_iconbox_btn:hover {
+    .cs_circle_btn.cs_style_1 > * {
+      transform: translate(0, 0);
+      &:last-child {
+        transform: translate(20px, -20px);
+      }
+    }
+  }
+}
+
+.cs_iconbox.cs_style_2 {
+  box-shadow: 0px 1px 2px 0px rgba(14, 12, 51, 0.1);
+  margin-bottom: 40px;
+  background-color: #fff;
+  &:last-child {
+    margin: 0;
+  }
+  .cs_iconbox_in {
+    padding: 20px 0;
+    padding-right: 40px;
+    padding-left: 30px;
+    display: flex;
+    gap: 30px;
+    @media (max-width: 575px) {
+      padding: 20px;
+      @media (max-width: 375px) {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }
+  .cs_iconbox_icon {
+    height: 80px;
+    width: 80px;
+    padding: 10px;
+    @media (max-width: 375px) {
+      height: 70px;
+      width: 70px;
+      background-color: rgba($accent2, 0.1);
+      border-radius: 50%;
+      padding: 20px;
+    }
+  }
+
+  .cs_iconbox_title {
+    color: $accent2;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .cs_circle_btn {
+    background-color: transparent;
+    border: 2px solid #cdcbff;
+  }
+
+  &:hover {
+    transform: rotate(-5deg);
+    box-shadow: 0px 1px 2px 0px rgba(14, 12, 51, 0.1),
+      5px 30px 40px 0px rgba(14, 12, 51, 0.1);
+    @media (max-width: 991px) {
+      transform: rotate(0) translateY(-5px);
+    }
+
+    .cs_iconbox_title {
+      color: $accent;
+    }
+
+    .cs_circle_btn {
+      background-color: $accent;
+      color: $white;
+      border: transparent;
+    }
+  }
+}
+
+.cs_iconbox.cs_style_3 {
+  gap: 30px;
+  margin-bottom: 47px;
+  .cs_iconbox_icon {
+    height: 62px;
+    width: 62px;
+    padding: 10px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 2px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, $accent2 50%, transparent 50%),
+        linear-gradient(90deg, $accent2 50%, transparent 50%),
+        linear-gradient(0deg, $accent2 50%, transparent 50%),
+        linear-gradient(0deg, $accent2 50%, transparent 50%);
+      background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+      background-size: 10px 2px, 10px 2px, 2px 10px, 2px 10px;
+      background-position: 0;
+      animation: border-dance 7s infinite linear;
+      padding: 2px;
+    }
+    @keyframes border-dance {
+      0% {
+        background-position: 0px 0px, 100% 100%, 0px 100%, 100% 0px;
+      }
+      100% {
+        background-position: 100% 0px, 0px 100%, 0px 0px, 100% 100%;
+      }
+    }
+  }
+  &:last-child {
+    margin: 0;
+    .cs_iconbox_icon::after {
+      display: none;
+    }
+  }
+}
+.cs_iconbox.cs_style_3.cs_type_1 {
+  .cs_iconbox_icon::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 2px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, $accent 50%, transparent 50%),
+      linear-gradient(90deg, $accent 50%, transparent 50%),
+      linear-gradient(0deg, $accent 50%, transparent 50%),
+      linear-gradient(0deg, $accent 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 10px 2px, 10px 2px, 2px 10px, 2px 10px;
+    background-position: 0;
+    animation: border-dance 7s infinite linear;
+    padding: 2px;
+  }
+}
+
+.cs_iconbox_wrap {
+  margin-top: -70px;
+}
+.cs_iconbox.cs_style_4 {
+  min-height: 140px;
+  background-color: $white;
+  box-shadow: 0px 20px 60px 0px rgba(18, 16, 53, 0.1);
+  margin-bottom: 24px;
+  padding: 20px 30px;
+  @media (max-width: 1400px) {
+    gap: 25px;
+  }
+  .cs_iconbox_icon {
+    max-width: 70px;
+    padding-top: 8px;
+  }
+  .cs_iconbox_title {
+    margin-bottom: 1px;
+  }
+  .cs_iconbox_text {
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,99 @@
+/*--------------------------------------------------------------
+  16. Shape
+----------------------------------------------------------------*/
+.cs_about_shape_2 {
+  right: 0%;
+  bottom: 140px;
+  animation: slide_top_to_bottom 5s linear infinite;
+}
+
+.cs_about_shape_3 {
+  right: 5%;
+  bottom: 140px;
+  animation: slide_top_to_bottom 5s linear infinite;
+  @media (max-width: 1550px) {
+    display: none;
+  }
+}
+
+.cs_not_found_shape_1 {
+  top: 60%;
+  left: 100px;
+  animation: slide_top_to_bottom 5s linear infinite;
+}
+
+.cs_imagebox_shape_about_2 {
+  animation: slide_top_to_bottom 5s linear infinite;
+}
+
+.cs_slill_shape_1 {
+  right: 100px;
+  top: 100px;
+  animation: slide_top_to_bottom 5s linear infinite;
+}
+
+.cs_service_shape_1 {
+  left: 7%;
+  top: 110px;
+  animation: slide_top_to_bottom 5s linear infinite;
+  @media (max-width: 1550px) {
+    display: none;
+  }
+}
+
+.cs_testmonial_shape_1 {
+  right: 6%;
+  bottom: 100px;
+  animation: slide_top_to_bottom 5s linear infinite;
+}
+
+.cs_footer_shape_1 {
+  left: 55%;
+  top: 45px;
+  animation: rotation 6s linear infinite;
+}
+
+/*------rotation-------*/
+@keyframes rotation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/*------slide top to bottom-------*/
+@keyframes slide_top_to_bottom {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+/*------slide left to right-------*/
+@keyframes slide_left_to_right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+}
+
+/*----------Responsive------------*/
+@media only screen and (max-width: 991px) {
+  .cs_footer_shape_1,
+  .cs_about_shape,
+  .cs_about_shape_2,
+  .cs_service_shape_1,
+  .cs_testmonial_shape_1,
+  .cs_slill_shape_1,
+  .cs_not_found_shape_1 {
+    display: none;
+  }
+}

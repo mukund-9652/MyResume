@@ -1,0 +1,74 @@
+/*--------------------------------------------------------------
+  26. Catagory
+----------------------------------------------------------------*/
+.cs_category.cs_style_1 {
+  box-shadow: 0px 1px 2px 0px rgba(23, 9, 85, 0.1);
+  padding: 20px 0 10px;
+  .cs_category_title {
+    margin-bottom: 15px;
+    margin-left: 30px;
+  }
+  li {
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 1px;
+    }
+    a {
+      padding: 10px 30px;
+      display: block;
+      font-size: 16px;
+    }
+    &:hover a {
+      background: #fff7f5;
+    }
+    &.active a {
+      background: #fff7f5;
+      color: $accent;
+      border-right: 3px solid $accent;
+    }
+  }
+}
+
+.cs_category.cs_style_2 {
+  box-shadow: 0px 1px 2px 0px rgba(23, 9, 85, 0.1);
+  padding: 20px 0 0;
+  margin-right: 15px;
+  .cs_category_title {
+    margin-bottom: 15px;
+    margin-left: 30px;
+  }
+  ul li {
+    display: block;
+    border-bottom: 1px solid #f2f1fc;
+    &:last-child {
+      border: none;
+    }
+    a {
+      padding: 10px 30px;
+      display: block;
+      font-size: 16px;
+    }
+    &:hover a {
+      background: $accent2;
+      color: $white;
+    }
+    &:hover a,
+    &.active a {
+      background: $accent2;
+      color: $white;
+      border-radius: 0 25px 25px 0;
+    }
+    &.active {
+      width: calc(100% + 15px);
+    }
+  }
+  @media (max-width: 1200px) {
+    margin: 0;
+    ul li.active {
+      width: 100%;
+      a {
+        border-radius: 10px;
+      }
+    }
+  }
+}

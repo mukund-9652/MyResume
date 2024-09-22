@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+  12. Paginations
+----------------------------------------------------------------*/
+.cs_pagenation.cs_style_1 {
+  ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    li {
+      > a {
+        min-height: 40px;
+        min-width: 40px;
+        text-align: center;
+        border-radius: 50%;
+        font-weight: 700;
+        padding: 5px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &.active a {
+        color: $accent;
+      }
+
+      &.prev,
+      &.next {
+        border: 1px solid #c2c2c7;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          border-color: $accent;
+        }
+      }
+
+      &.next {
+        border-color: $accent;
+        a {
+          color: $accent;
+        }
+      }
+    }
+  }
+}

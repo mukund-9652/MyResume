@@ -1,0 +1,67 @@
+/*--------------------------------------------------------------
+  9. Social Btns
+----------------------------------------------------------------*/
+.cs_social.cs_style_1 {
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+.cs_social.cs_style_2 {
+  box-shadow: 0px 1px 2px 0px rgba(43, 23, 131, 0.15);
+  width: 70px;
+  overflow: hidden;
+  border-radius: 10px;
+  .cs_social_title {
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid #e9e7ff;
+    background: linear-gradient(
+      180deg,
+      rgba(246, 245, 255, 0) 0%,
+      #f6f5ff 100%
+    );
+    padding: 10px;
+  }
+
+  .cs_social_wrap a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    svg {
+      transition: all 0.4s ease-in-out;
+    }
+    &:hover svg {
+      scale: (1.5);
+    }
+  }
+
+  @media (max-width: 991px) {
+    display: inline-flex;
+    width: initial;
+    gap: 0;
+    margin-bottom: 30px;
+
+    .cs_social_title {
+      line-height: 40px;
+      padding: 0 20px;
+      border-radius: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(246, 245, 255, 0.1) 0%,
+        #f1f1f1 100%
+      );
+    }
+
+    .cs_social_wrap {
+      gap: 20px;
+    }
+
+    .cs_social_wrap a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      padding: 0;
+    }
+  }
+}

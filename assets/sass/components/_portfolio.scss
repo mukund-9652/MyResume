@@ -1,0 +1,135 @@
+/*--------------------------------------------------------------
+  23. Portfolio
+----------------------------------------------------------------*/
+.cs_portfolio.cs_style_1 {
+  overflow: hidden;
+  display: block;
+  .cs_portfolio_thumbnail {
+    min-height: 200px;
+  }
+  .cs_portfolio_info {
+    bottom: 30px;
+    left: 30px;
+  }
+}
+
+.cs_portfolio.cs_style_2 {
+  overflow: hidden;
+  .cs_portfolio_thumbnail {
+    min-height: 200px;
+    display: block;
+    position: relative;
+  }
+  .cs_portfolio_info {
+    padding: 25px 30px;
+    bottom: -100%;
+    right: 0;
+    background: rgba(52, 46, 173, 0.7);
+    transition: all 0.4s ease-in-out;
+    // -webkit-transform-origin: 0 50%;
+    // -ms-transform-origin: 0 50%;
+    // transform-origin: 0 50%;
+    // transition-property: -webkit-transform;
+    // -o-transition-property: transform;
+    // transition-property: transform;
+    // transition-property: transform, -webkit-transform;
+    // -webkit-transition-duration: 0.6s;
+    // -o-transition-duration: 0.6s;
+    // transition-duration: 0.6s;
+    // -webkit-transition-timing-function: ease-out;
+    // -o-transition-timing-function: ease-out;
+    // transition-timing-function: ease-out;
+  }
+  &:hover {
+    .cs_portfolio_info {
+      bottom: 0;
+    }
+  }
+}
+
+/*-----Portfolio browser -------*/
+.cs_browser.cs_style_1 {
+  background: linear-gradient(135deg, #d5d4f0 0%, #ffecea 100%);
+  box-shadow: 0px 30px 27px 0px rgba(35, 31, 111, 0.2);
+  padding: 20px 30px;
+  gap: 70px;
+  display: flex;
+  align-items: center;
+  @media (max-width: 991px) {
+    gap: 50px;
+  }
+  .cs_btns {
+    display: flex;
+    gap: 16px;
+    span {
+      height: 27px;
+      width: 27px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0px -2px 4px 0px rgba(31, 20, 95, 0.15) inset;
+      filter: drop-shadow(0px 1px 2px rgba(31, 20, 95, 0.2))
+        drop-shadow(0px 8px 30px rgba(31, 20, 95, 0.1));
+    }
+  }
+  .cs_input_filed {
+    height: 30px;
+    border-radius: 8px;
+    background: $white;
+    box-shadow: 0px 1px 2px 0px rgba(31, 20, 95, 0.2),
+      0px 8px 30px 0px rgba(31, 20, 95, 0.1),
+      0px -2px 4px 0px rgba(31, 20, 95, 0.15) inset;
+  }
+}
+
+/*-----View all Project / Portfolio -------*/
+.cs_portfolio_text_btn {
+  .cs_text_btn::after {
+    display: none;
+  }
+  .cs_circle_btn {
+    height: 30px;
+    width: 30px;
+    transform: translateY(3px);
+    background-color: transparent;
+  }
+
+  &:hover .cs_circle_btn > * {
+    transform: translate(0, 0);
+    &:last-child {
+      transform: translate(20px, -20px);
+    }
+  }
+}
+
+/*----------Portfolio------------*/
+.cs_portfoli_details.cs_style_1 {
+  .cs_portfolio_title {
+    margin-bottom: 30px;
+  }
+  .cs_portfolio_text,
+  .cs_protfolio_image {
+    margin-bottom: 45px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .cs_portfolio_details_wrap {
+    margin-bottom: 50px;
+    > * {
+      margin-bottom: 15px;
+      padding-right: 50px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .cs_portfolio_title,
+    .cs_portfolio_text,
+    .cs_protfolio_image,
+    .cs_portfolio_details_wrap {
+      margin-bottom: 20px;
+    }
+  }
+}

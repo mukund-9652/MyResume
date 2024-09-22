@@ -1,0 +1,26 @@
+/*------------------------------------
+  19. Section Heading
+-------------------------------------*/
+.cs_section_heading.cs_style_1 {
+  .cs_section_subtitle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    gap: 15px;
+    svg {
+      animation: rotation_3 3s ease-in-out infinite;
+      @keyframes rotation_3 {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+    }
+  }
+  .cs_section_title {
+    line-height: 1.2em;
+    margin: 0;
+  }
+}

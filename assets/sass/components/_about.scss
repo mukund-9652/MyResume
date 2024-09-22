@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------
+  15. About
+----------------------------------------------------------------*/
+.cs_about.cs_style_1 {
+  .cs_about_title {
+    margin-bottom: 25px;
+  }
+  .cs_about_text {
+    margin-bottom: 30px;
+  }
+  .cs_about_subtitle {
+    margin-bottom: 10px;
+    color: $primary;
+  }
+
+  .cs_about_summary_list li {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 1199px) {
+    .cs_about_title,
+    .cs_about_text {
+      margin-bottom: 20px;
+    }
+    .cs_about_summary_list li {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.cs_about.cs_style_1.cs_type_1 {
+  .cs_about_subtitle {
+    margin-bottom: 30px;
+    @media (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+}
