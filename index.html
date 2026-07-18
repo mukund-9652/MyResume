@@ -79,11 +79,12 @@
 
       <div class="nav-actions">
         <button class="aesthetics-toggle" id="aestheticsToggle" aria-label="Toggle Minimal Mode" title="Toggle Minimal UI">
-          <!-- Sparkle icon (Advanced Mode) -->
+          <!-- Sparkle icon (shown in Minimal Mode — click to enable animations) -->
           <svg class="icon-advanced" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"></path>
+            <path d="M19 13l.75 2.25L22 16l-2.25.75L19 19l-.75-2.25L16 16l2.25-.75L19 13z"></path>
           </svg>
-          <!-- Command icon (Minimal Mode) -->
+          <!-- Command icon (shown in Advanced Mode — click to go minimal) -->
           <svg class="icon-minimal" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
             <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
           </svg>
@@ -200,8 +201,20 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-photo animate-on-scroll">
-            <img id="aboutImage" src="assets/img/mukund-light-coat-about.png" alt="Mukund R S">
+          <div class="about-3d-container animate-on-scroll" id="about3DContainer">
+            <!-- Static fallback grid for Minimal Mode -->
+            <div class="about-skills-static">
+              <span class="static-skill">☕ Java</span>
+              <span class="static-skill">🍃 Spring Boot</span>
+              <span class="static-skill">🅰️ Angular</span>
+              <span class="static-skill">🐬 MySQL</span>
+              <span class="static-skill">🔵 TypeScript</span>
+              <span class="static-skill">🟨 JavaScript</span>
+              <span class="static-skill">🐍 Python</span>
+              <span class="static-skill">☁️ AWS</span>
+              <span class="static-skill">🐳 Docker</span>
+            </div>
+            <!-- Three.js Canvas will be injected here -->
           </div>
           <div>
             <p class="animate-on-scroll" style="margin-bottom: 32px; font-size: 1.05rem; line-height: 1.85;">
@@ -792,6 +805,21 @@
 
   <!-- Auto Scroll Mobile Widget -->
   <div class="auto-scroll-widget" id="autoScrollWidget">
+    <!-- Left: Theme Toggle (Mobile) -->
+    <button class="scroll-btn mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle Theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line>
+      </svg>
+    </button>
+
     <button class="scroll-btn toggle-scroll" id="toggleScrollBtn" aria-label="Play/Pause Auto Scroll">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
         <polygon points="5 3 19 12 5 21 5 3"></polygon>
@@ -807,6 +835,17 @@
         <line x1="5" y1="12" x2="19" y2="12"></line>
       </svg>
     </button>
+
+    <!-- Right: Animation Toggle (Mobile) -->
+    <button class="scroll-btn mobile-aesthetics-toggle" id="mobileAestheticsToggle" aria-label="Toggle Animations">
+      <svg class="mob-icon-advanced" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"></path>
+        <path d="M19 13l.75 2.25L22 16l-2.25.75L19 19l-.75-2.25L16 16l2.25-.75L19 13z"></path>
+      </svg>
+      <svg class="mob-icon-minimal" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+      </svg>
+    </button>
   </div>
 
   <!-- Scroll to Top Button (All Devices) -->
@@ -816,6 +855,8 @@
     </svg>
   </button>
 
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- Script -->
   <script src="assets/js/main.js" defer></script>
 </body>

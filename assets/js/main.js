@@ -12,26 +12,36 @@
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
 
-  // Always default to light theme on load
-  html.setAttribute('data-theme', 'light');
+  // Restore saved theme or default to light
+  const savedTheme = localStorage.getItem('mukund-theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
 
-  themeToggle.addEventListener('click', () => {
+  // Set hero image based on saved theme
+  const heroImageInit = document.getElementById('heroImage');
+  if (heroImageInit) {
+    heroImageInit.src = savedTheme === 'dark' ? 'assets/img/mukund-dark-coat.png' : 'assets/img/mukund-light-coat.png';
+  }
+
+  function toggleTheme() {
     const current = html.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
+    localStorage.setItem('mukund-theme', next);
     
     // Swap Hero Image
     const heroImage = document.getElementById('heroImage');
     if (heroImage) {
       heroImage.src = next === 'dark' ? 'assets/img/mukund-dark-coat.png' : 'assets/img/mukund-light-coat.png';
     }
+  }
 
-    // Swap About Image
-    const aboutImage = document.getElementById('aboutImage');
-    if (aboutImage) {
-      aboutImage.src = next === 'dark' ? 'assets/img/mukund-dark-coat-about.png' : 'assets/img/mukund-light-coat-about.png';
-    }
-  });
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // Mobile Theme Toggle (in auto-scroll bar)
+  const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+  if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', toggleTheme);
+  }
 
   // ----------------------------------------------------------------
   // 1b. Aesthetics Toggle (Minimal / Advanced)
@@ -39,24 +49,46 @@
   const aestheticsToggle = document.getElementById('aestheticsToggle');
   const iconAdvanced = document.querySelector('.icon-advanced');
   const iconMinimal = document.querySelector('.icon-minimal');
+  const mobIconAdvanced = document.querySelector('.mob-icon-advanced');
+  const mobIconMinimal = document.querySelector('.mob-icon-minimal');
   
-  // Always default to minimal on load
-  document.body.classList.add('minimal-mode');
-  iconAdvanced.style.display = 'none';
-  iconMinimal.style.display = 'block';
+  // Restore saved animation preference or default to minimal
+  const savedAesthetics = localStorage.getItem('mukund-animations');
+  const startMinimal = savedAesthetics === null ? true : savedAesthetics === 'minimal';
 
-  aestheticsToggle.addEventListener('click', () => {
+  if (startMinimal) {
+    document.body.classList.add('minimal-mode');
+  } else {
+    document.body.classList.remove('minimal-mode');
+  }
+
+  // Set icons based on saved state
+  iconAdvanced.style.display = startMinimal ? 'block' : 'none';
+  iconMinimal.style.display = startMinimal ? 'none' : 'block';
+  if (mobIconAdvanced) mobIconAdvanced.style.display = startMinimal ? 'block' : 'none';
+  if (mobIconMinimal) mobIconMinimal.style.display = startMinimal ? 'none' : 'block';
+
+  function toggleAesthetics() {
     document.body.classList.toggle('minimal-mode');
     const isMinimal = document.body.classList.contains('minimal-mode');
+    localStorage.setItem('mukund-animations', isMinimal ? 'minimal' : 'advanced');
     
-    if (isMinimal) {
-      iconAdvanced.style.display = 'none';
-      iconMinimal.style.display = 'block';
-    } else {
-      iconAdvanced.style.display = 'block';
-      iconMinimal.style.display = 'none';
-    }
-  });
+    // Update navbar icons (sparkle shows in minimal, command shows in advanced)
+    iconAdvanced.style.display = isMinimal ? 'block' : 'none';
+    iconMinimal.style.display = isMinimal ? 'none' : 'block';
+
+    // Update mobile bar icons
+    if (mobIconAdvanced) mobIconAdvanced.style.display = isMinimal ? 'block' : 'none';
+    if (mobIconMinimal) mobIconMinimal.style.display = isMinimal ? 'none' : 'block';
+  }
+
+  aestheticsToggle.addEventListener('click', toggleAesthetics);
+
+  // Mobile Aesthetics Toggle (in auto-scroll bar)
+  const mobileAestheticsToggle = document.getElementById('mobileAestheticsToggle');
+  if (mobileAestheticsToggle) {
+    mobileAestheticsToggle.addEventListener('click', toggleAesthetics);
+  }
 
   // ----------------------------------------------------------------
   // 2. Mobile Menu Toggle
@@ -803,6 +835,376 @@
       document.documentElement.style.scrollBehavior = 'smooth';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  /* ----------------------------------------------------------------
+     Three.js — Holographic Arc Reactor / Skill Atom
+     Inspired by Iron Man HUD — Skills orbit as glowing electrons
+     ---------------------------------------------------------------- */
+  const container3d = document.getElementById('about3DContainer');
+  if (container3d && typeof THREE !== 'undefined') {
+
+    // ── Setup ───────────────────────────────────────────────────────
+    const skills = [
+      'Java', 'Spring Boot', 'Angular', 'MySQL', 'TypeScript',
+      'JavaScript', 'Python', 'AWS', 'Docker', 'REST API', 'Git', 'FastAPI'
+    ];
+
+    let scene, camera, renderer, group, clock;
+    let core, coreGlow, orbits = [], electronMeshes = [], trailSystems = [];
+    let scanPlane;
+    let mouse = new THREE.Vector2(-1000, -1000);
+    let targetRotX = 0, targetRotY = 0, rotX = 0, rotY = 0;
+    let isDragging = false, prevMouse = { x: 0, y: 0 };
+
+    // ── Procedural glow texture ─────────────────────────────────────
+    function glowTex(r, g, b) {
+      const c = document.createElement('canvas');
+      c.width = c.height = 64;
+      const ctx = c.getContext('2d');
+      const gr = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      gr.addColorStop(0, `rgba(${r},${g},${b},1)`);
+      gr.addColorStop(0.3, `rgba(${r},${g},${b},0.6)`);
+      gr.addColorStop(0.6, `rgba(${r},${g},${b},0.15)`);
+      gr.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = gr;
+      ctx.fillRect(0, 0, 64, 64);
+      return new THREE.CanvasTexture(c);
+    }
+
+    // ── Label sprite ────────────────────────────────────────────────
+    function makeLabel(text) {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const c = document.createElement('canvas');
+      c.width = 256; c.height = 64;
+      const ctx = c.getContext('2d');
+
+      // Draw rounded pill background
+      const px = 20, py = 10, pw = 216, ph = 44, pr = 22;
+      ctx.beginPath();
+      ctx.moveTo(px + pr, py);
+      ctx.arcTo(px + pw, py, px + pw, py + ph, pr);
+      ctx.arcTo(px + pw, py + ph, px, py + ph, pr);
+      ctx.arcTo(px, py + ph, px, py, pr);
+      ctx.arcTo(px, py, px + pw, py, pr);
+      ctx.closePath();
+      ctx.fillStyle = isDark ? 'rgba(15, 23, 42, 0.85)' : 'rgba(241, 245, 249, 0.9)';
+      ctx.fill();
+      ctx.strokeStyle = isDark ? 'rgba(99, 102, 241, 0.5)' : 'rgba(79, 70, 229, 0.3)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Text
+      ctx.font = 'bold 20px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = isDark ? '#e2e8f0' : '#1e293b';
+      ctx.fillText(text, 128, 32);
+
+      const tex = new THREE.CanvasTexture(c);
+      const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false });
+      const s = new THREE.Sprite(mat);
+      s.scale.set(1.6, 0.4, 1);
+      return s;
+    }
+
+    // ── Core energy sphere ──────────────────────────────────────────
+    function buildCore() {
+      // Inner bright sphere
+      const geo = new THREE.IcosahedronGeometry(0.35, 3);
+      const mat = new THREE.MeshBasicMaterial({ color: 0x00e5ff, transparent: true, opacity: 0.9 });
+      core = new THREE.Mesh(geo, mat);
+      group.add(core);
+
+      // Outer glow sprite
+      const glowMat = new THREE.SpriteMaterial({
+        map: glowTex(0, 229, 255),
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+        opacity: 0.7,
+        depthWrite: false
+      });
+      coreGlow = new THREE.Sprite(glowMat);
+      coreGlow.scale.set(3, 3, 1);
+      group.add(coreGlow);
+
+      // Wireframe icosahedron shell
+      const shellGeo = new THREE.IcosahedronGeometry(0.55, 1);
+      const shellMat = new THREE.MeshBasicMaterial({ color: 0x4f46e5, wireframe: true, transparent: true, opacity: 0.35 });
+      const shell = new THREE.Mesh(shellGeo, shellMat);
+      group.add(shell);
+    }
+
+    // ── Orbit rings + electron nodes ────────────────────────────────
+    function buildOrbits() {
+      // Distribute skills across 3 orbital planes
+      const orbitConfigs = [
+        { radius: 1.6, tilt: [Math.PI * 0.1, 0], speed: 0.6, color: 0x00e5ff },
+        { radius: 2.1, tilt: [Math.PI * 0.45, Math.PI * 0.15], speed: -0.4, color: 0x6366f1 },
+        { radius: 2.6, tilt: [-Math.PI * 0.2, Math.PI * 0.5], speed: 0.3, color: 0x38bdf8 }
+      ];
+
+      let skillIdx = 0;
+
+      orbitConfigs.forEach((cfg) => {
+        // Visible orbit ring
+        const ringGeo = new THREE.TorusGeometry(cfg.radius, 0.012, 8, 128);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: cfg.color, transparent: true, opacity: 0.25,
+          blending: THREE.AdditiveBlending
+        });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.set(cfg.tilt[0], cfg.tilt[1], 0);
+        group.add(ring);
+
+        // Electrons on this orbit
+        const electronsPerOrbit = Math.ceil(skills.length / orbitConfigs.length);
+        const orbitElectrons = [];
+
+        for (let e = 0; e < electronsPerOrbit && skillIdx < skills.length; e++, skillIdx++) {
+          const angle = (e / electronsPerOrbit) * Math.PI * 2;
+
+          // Electron node (glowing sphere)
+          const eGeo = new THREE.SphereGeometry(0.08, 16, 16);
+          const eMat = new THREE.MeshBasicMaterial({ color: cfg.color });
+          const eMesh = new THREE.Mesh(eGeo, eMat);
+
+          // Electron glow
+          const eGlowMat = new THREE.SpriteMaterial({
+            map: glowTex((cfg.color >> 16) & 255, (cfg.color >> 8) & 255, cfg.color & 255),
+            blending: THREE.AdditiveBlending, transparent: true, opacity: 0.8, depthWrite: false
+          });
+          const eGlow = new THREE.Sprite(eGlowMat);
+          eGlow.scale.set(0.8, 0.8, 1);
+          eMesh.add(eGlow);
+
+          // Label
+          const label = makeLabel(skills[skillIdx]);
+          label.position.y = 0.35;
+          eMesh.add(label);
+
+          group.add(eMesh);
+
+          // Trail particle system
+          const trailCount = 30;
+          const trailGeo = new THREE.BufferGeometry();
+          const trailPositions = new Float32Array(trailCount * 3);
+          const trailOpacities = new Float32Array(trailCount);
+          trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPositions, 3));
+
+          const trailMat = new THREE.PointsMaterial({
+            size: 0.06, color: cfg.color,
+            transparent: true, opacity: 0.4,
+            blending: THREE.AdditiveBlending, depthWrite: false
+          });
+          const trail = new THREE.Points(trailGeo, trailMat);
+          group.add(trail);
+
+          const electronData = {
+            mesh: eMesh,
+            trail: trail,
+            trailPositions: [],
+            angle: angle,
+            radius: cfg.radius,
+            tiltX: cfg.tilt[0],
+            tiltY: cfg.tilt[1],
+            speed: cfg.speed,
+            color: cfg.color
+          };
+
+          // Pre-fill trail buffer
+          for (let t = 0; t < trailCount; t++) {
+            electronData.trailPositions.push(new THREE.Vector3());
+          }
+
+          orbitElectrons.push(electronData);
+          electronMeshes.push(electronData);
+        }
+
+        orbits.push({ ring, electrons: orbitElectrons, config: cfg });
+      });
+    }
+
+    // ── Holographic scan plane ──────────────────────────────────────
+    function buildScanPlane() {
+      const geo = new THREE.PlaneGeometry(8, 0.03);
+      const mat = new THREE.MeshBasicMaterial({
+        color: 0x00e5ff, transparent: true, opacity: 0.15,
+        blending: THREE.AdditiveBlending, side: THREE.DoubleSide
+      });
+      scanPlane = new THREE.Mesh(geo, mat);
+      group.add(scanPlane);
+    }
+
+    // ── Ambient dust particles ──────────────────────────────────────
+    function buildDust() {
+      const count = 200;
+      const geo = new THREE.BufferGeometry();
+      const pos = new Float32Array(count * 3);
+      for (let i = 0; i < count; i++) {
+        pos[i * 3] = (Math.random() - 0.5) * 7;
+        pos[i * 3 + 1] = (Math.random() - 0.5) * 7;
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 7;
+      }
+      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      const mat = new THREE.PointsMaterial({
+        size: 0.02, color: 0x6366f1, transparent: true, opacity: 0.3,
+        blending: THREE.AdditiveBlending, depthWrite: false
+      });
+      group.add(new THREE.Points(geo, mat));
+    }
+
+    // ── Init ────────────────────────────────────────────────────────
+    function init3D() {
+      const W = container3d.clientWidth || 300;
+      const H = container3d.clientHeight || 300;
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(50, W / H, 0.1, 100);
+      camera.position.z = 6;
+      clock = new THREE.Clock();
+
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(W, H);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container3d.appendChild(renderer.domElement);
+
+      group = new THREE.Group();
+      scene.add(group);
+
+      buildCore();
+      buildOrbits();
+      buildScanPlane();
+      buildDust();
+
+      // Events
+      container3d.addEventListener('mousedown', (e) => { isDragging = true; prevMouse = { x: e.clientX, y: e.clientY }; });
+      container3d.addEventListener('mousemove', (e) => {
+        const r = renderer.domElement.getBoundingClientRect();
+        mouse.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+        mouse.y = -((e.clientY - r.top) / r.height) * 2 + 1;
+        if (!isDragging) return;
+        targetRotY += (e.clientX - prevMouse.x) * 0.005;
+        targetRotX += (e.clientY - prevMouse.y) * 0.005;
+        prevMouse = { x: e.clientX, y: e.clientY };
+      });
+      container3d.addEventListener('mouseleave', () => { isDragging = false; mouse.set(-1000, -1000); });
+      document.addEventListener('mouseup', () => { isDragging = false; });
+
+      // Touch
+      container3d.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) { isDragging = true; prevMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY }; }
+      }, { passive: true });
+      container3d.addEventListener('touchmove', (e) => {
+        if (!isDragging || !e.touches.length) return;
+        targetRotY += (e.touches[0].clientX - prevMouse.x) * 0.008;
+        targetRotX += (e.touches[0].clientY - prevMouse.y) * 0.008;
+        prevMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }, { passive: true });
+      container3d.addEventListener('touchend', () => { isDragging = false; }, false);
+
+      window.addEventListener('resize', () => {
+        if (!renderer || !camera) return;
+        camera.aspect = container3d.clientWidth / container3d.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container3d.clientWidth, container3d.clientHeight);
+      });
+
+      animate();
+    }
+
+    // ── Rebuild labels on theme change ──────────────────────────────
+    const themeObserver = new MutationObserver((mutations) => {
+      mutations.forEach((m) => {
+        if (m.attributeName === 'data-theme') {
+          // Rebuild each electron's label sprite with new theme colors
+          let skillIdx = 0;
+          electronMeshes.forEach((ed) => {
+            // Find and remove old label (last child that is a Sprite)
+            const oldLabel = ed.mesh.children.find(c => c.isSprite && !c.material.map?.image?.width === 64);
+            ed.mesh.children.forEach((child) => {
+              if (child.isSprite && child.scale.x > 1) {
+                child.material.map.dispose();
+                child.material.dispose();
+                ed.mesh.remove(child);
+              }
+            });
+            // Add new label
+            if (skillIdx < skills.length) {
+              const newLabel = makeLabel(skills[skillIdx]);
+              newLabel.position.y = 0.35;
+              ed.mesh.add(newLabel);
+            }
+            skillIdx++;
+          });
+        }
+      });
+    });
+    themeObserver.observe(document.documentElement, { attributes: true });
+
+    // ── Animation loop ──────────────────────────────────────────────
+    function animate() {
+      requestAnimationFrame(animate);
+      if (document.body.classList.contains('minimal-mode')) return;
+
+      const t = clock.getElapsedTime();
+
+      // Idle auto-rotation
+      if (!isDragging) { targetRotY += 0.001; }
+      rotX += (targetRotX - rotX) * 0.04;
+      rotY += (targetRotY - rotY) * 0.04;
+      group.rotation.x = rotX;
+      group.rotation.y = rotY;
+
+      // Core pulsation
+      const pulse = 1 + Math.sin(t * 3) * 0.15;
+      core.scale.set(pulse, pulse, pulse);
+      coreGlow.material.opacity = 0.5 + Math.sin(t * 4) * 0.2;
+      coreGlow.scale.set(2.5 + Math.sin(t * 2) * 0.5, 2.5 + Math.sin(t * 2) * 0.5, 1);
+
+      // Scan plane sweep
+      scanPlane.position.y = Math.sin(t * 0.8) * 3;
+      scanPlane.material.opacity = 0.08 + Math.abs(Math.sin(t * 0.8)) * 0.08;
+
+      // Update electrons
+      electronMeshes.forEach((ed) => {
+        ed.angle += ed.speed * 0.01;
+
+        // Calculate position on tilted orbit
+        let x = ed.radius * Math.cos(ed.angle);
+        let y = ed.radius * Math.sin(ed.angle);
+        let z = 0;
+
+        // Apply orbit tilt rotation
+        const cosX = Math.cos(ed.tiltX), sinX = Math.sin(ed.tiltX);
+        const cosY = Math.cos(ed.tiltY), sinY = Math.sin(ed.tiltY);
+
+        // Rotate around X
+        let y1 = y * cosX - z * sinX;
+        let z1 = y * sinX + z * cosX;
+        // Rotate around Y
+        let x2 = x * cosY + z1 * sinY;
+        let z2 = -x * sinY + z1 * cosY;
+
+        ed.mesh.position.set(x2, y1, z2);
+
+        // Update trail
+        ed.trailPositions.unshift(new THREE.Vector3(x2, y1, z2));
+        ed.trailPositions.pop();
+
+        const trailArr = ed.trail.geometry.attributes.position.array;
+        for (let i = 0; i < ed.trailPositions.length; i++) {
+          trailArr[i * 3] = ed.trailPositions[i].x;
+          trailArr[i * 3 + 1] = ed.trailPositions[i].y;
+          trailArr[i * 3 + 2] = ed.trailPositions[i].z;
+        }
+        ed.trail.geometry.attributes.position.needsUpdate = true;
+      });
+
+      renderer.render(scene, camera);
+    }
+
+    init3D();
   }
 
 })();

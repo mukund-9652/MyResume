@@ -677,22 +677,59 @@ body.minimal-mode .section-alt {
    ---------------------------------------------------------------- */
 .about-grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 60px;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
   align-items: start;
 }
 
-.about-photo {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  aspect-ratio: 3/4;
+.about-3d-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  overflow: visible;
 }
 
-.about-photo img {
+.about-3d-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Static Skill Fallback for Minimal Mode */
+.about-skills-static {
+  display: none; /* Hidden in Advanced Mode */
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+
+.static-skill {
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+body.minimal-mode .about-skills-static {
+  display: flex; /* Shown in Minimal Mode */
+}
+
+body.minimal-mode .about-3d-container canvas {
+  display: none !important; /* Hide Three.js canvas in Minimal Mode */
 }
 
 .about-details-grid {
@@ -1370,14 +1407,10 @@ body.minimal-mode .section-alt {
     text-align: center;
   }
 
-  .about-photo {
-    max-width: 240px;
-    margin: 0 auto;
-    aspect-ratio: 3/4; /* Don't crop to a square on mobile */
-  }
-
-  .about-photo img {
-    object-position: top; /* Prevents top of head cropping */
+  .about-3d-container {
+    max-width: 300px;
+    margin: 0 auto 40px;
+    height: 300px;
   }
 
   .about-details-grid {
@@ -1690,6 +1723,44 @@ body.minimal-mode .section-alt {
 .auto-scroll-widget.minimized .min-max-btn {
   border-left: none;
   padding-left: 0;
+}
+
+/* Mobile Theme & Aesthetics Buttons */
+.mobile-theme-toggle,
+.mobile-aesthetics-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.mobile-theme-toggle {
+  border-right: 1px solid var(--border);
+  padding-right: 12px;
+  margin-right: 0;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+}
+
+.mobile-aesthetics-toggle {
+  border-left: 1px solid var(--border);
+  padding-left: 12px;
+  margin-left: 0;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+}
+
+.mobile-theme-toggle:hover,
+.mobile-aesthetics-toggle:hover {
+  color: var(--accent);
+}
+
+.auto-scroll-widget.minimized .mobile-theme-toggle,
+.auto-scroll-widget.minimized .mobile-aesthetics-toggle {
+  display: none;
 }
 
 /* ----------------------------------------------------------------
