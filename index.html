@@ -1,513 +1,648 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-  <!-- Meta Tags -->
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Mukund R S">
   <meta name="description"
-    content="Explore the portfolio of Mukund R S, a full stack developer specializing in Angular, Java, Springboot and flutter. Get in touch for collaboration.">
+    content="Mukund R S — Advanced Full-Stack Software Engineer specializing in Java, Spring Boot, Angular, TypeScript, PostgreSQL, and AWS. Building scalable, secure enterprise applications.">
   <meta name="keywords"
-    content="Mukund, Mukund R S, Mukund Ravi Sankaran, Portfolio, Web Developer, Software Engineer, Angular Developer, Java Developer, Spring Boot Developer, AI, ML, Database Migration">
+    content="Mukund R S, Mukund Ravi Sankaran, Advanced Full-Stack Engineer, Software Engineer, Java Developer, Spring Boot, Angular, TypeScript, PostgreSQL, AWS, Hibernate, REST API, DevSecOps">
   <meta name="robots" content="index, follow">
-  <!-- LinkedIn Sharing Meta (via URL link) -->
-  <meta name="linkedin:site" content="https://www.linkedin.com/in/mukundrs/">
 
-  <!-- Favicon Icon -->
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mukund R S — Advanced Full-Stack Software Engineer">
+  <meta property="og:description"
+    content="Architecting scalable backend systems with Java & Spring Boot, building responsive frontends with Angular & TypeScript.">
+  <meta property="og:image" content="assets/img/hero/hero_1.png">
+  <meta property="og:url" content="https://mukundrs.netlify.app/">
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
-  <!-- Site Title -->
-  <title>Mukund Ravi Sankaran | Portfolio | Software Engineer, Web Developer</title>
 
-  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/odometer-theme-default.css">
-  <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/animate.css">
+  <!-- Title -->
+  <title>Mukund R S | Advanced Full-Stack Software Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-  <div class="cs_preloader cs_center">
-    <div class="cs_preloader_in"></div>
-  </div>
 
-  <!-- Start Header Section -->
-  <header class="cs_site_header cs_style_1 cs_sticky_header cs_color_2">
-    <div class="cs_main_header">
-      <div class="container">
-        <div class="cs_main_header_in">
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Mukund<span>.</span></a>
 
-          <div class="cs_main_header_center">
-            <div class="cs_nav">
-              <ul class="cs_nav_list">
-                <li class="active"><a href="#home">Home</a></li>
-                <li class=""><a href="#about">About</a></li>
-                <li class=""><a href="#resume">Resume</a></li>
-                <li> <a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#achievements">Awards</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <!-- Sun icon (shown in light mode) -->
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon icon (shown in dark mode) -->
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
-  <!-- End Header Section -->
 
-  <!-- Main content inside start-->
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
   <main>
-    <!-- Start Hero Section -->
-    <section class="cs_hero cs_style_2 cs_filled_bg" data-src="assets/img/bg/hero_bg_2.svg" id="home">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-grid-bg"></div>
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="cs_hero_info cs_pr_20">
-              <h4 class="cs_hero_meta cs_font_48 cs_white_blue_text_2 cs_semi_bold cs_primary_font mb-0">Hi! I’m<br>
-              </h4>
-              <h1 class="cs_hero_title cs_font_92 cs_black wow fadeInLeft" data-wow-duration="0.8s"
-                data-wow-delay="0.2s"><span class="cs_gradient_text">Mukund </span><span
-                  class="cs_gradient_border_text">R S</span></h1>
-              <h4 class="cs_hero_subtitle cs_font_36 cs_semi_bold cs_primary_font cs_white_blue_text_2"><span class="cs_accent_color_2">Advanced Full-Stack Software Engineer</span>
-              </h4>
-              <p class="cs_hero_text">I’m an advanced full-stack engineer specialized in architecting scalable backend systems (Java/Spring Boot), crafting responsive, high-performance frontends (Angular/TypeScript), and optimizing complex databases. Driven by secure coding practices and clean architecture, I build resilient applications that power business growth and operational efficiency.</p>
-              <div class="cs_social_btns d-flex">
-                <a class="cs_accent_color_2" href="https://github.com/mukund-9652" target="_blank">
-                  <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M15.3002 23V18.6C15.4532 17.222 15.0581 15.8391 14.2002 14.75C17.5002 14.75 20.8002 12.55 20.8002 8.7C20.8882 7.325 20.5032 5.972 19.7002 4.85C20.0082 3.585 20.0082 2.265 19.7002 1C19.7002 1 18.6002 1 16.4002 2.65C13.4962 2.1 10.5042 2.1 7.60016 2.65C5.40016 1 4.30016 1 4.30016 1C3.97016 2.265 3.97016 3.585 4.30016 4.85C3.49922 5.96747 3.11048 7.32807 3.20016 8.7C3.20016 12.55 6.50016 14.75 9.80016 14.75C9.37116 15.289 9.05216 15.905 8.86516 16.565C8.67816 17.225 8.62316 17.918 8.70016 18.6V23"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M8.7 18.5999C3.739 20.7999 3.2 16.3999 1 16.3999" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-                <a class="cs_accent_color_2" href="https://www.linkedin.com/in/mukundrs/" target="_blank">
-                  <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M15.7367 7.3158C17.4117 7.3158 19.0182 7.98121 20.2026 9.16565C21.3871 10.3501 22.0525 11.9565 22.0525 13.6316V21H17.842V13.6316C17.842 13.0732 17.6201 12.5378 17.2253 12.1429C16.8305 11.7481 16.295 11.5263 15.7367 11.5263C15.1783 11.5263 14.6429 11.7481 14.248 12.1429C13.8532 12.5378 13.6314 13.0732 13.6314 13.6316V21H9.4209V13.6316C9.4209 11.9565 10.0863 10.3501 11.2708 9.16565C12.4552 7.98121 14.0616 7.3158 15.7367 7.3158Z"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M5.21053 8.36841H1V21H5.21053V8.36841Z" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M3.10526 5.21053C4.26797 5.21053 5.21053 4.26797 5.21053 3.10526C5.21053 1.94256 4.26797 1 3.10526 1C1.94256 1 1 1.94256 1 3.10526C1 4.26797 1.94256 5.21053 3.10526 5.21053Z"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </a>
-                <a class="cs_accent_color_2" href="mailto:mukund.rs.2001@gmail.com" target="_blank">
-                  <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M3 1H19C20.1 1 21 1.9 21 3V15C21 16.1 20.1 17 19 17H3C1.9 17 1 16.1 1 15V3C1 1.9 1.9 1 3 1Z"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M21 3L11 10L1 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-
-                </a>
-              </div>
-              <div class="cs_btns">
-                <a href="assets/files/Mukund-R-S-Resume.pdf" class="cs_btn cs_style_1" download><span>Download
-                    Resume</span></a>
-                <a class="cs_font_24 cs_accent_color_2 cs_accent_color_2_hover cs_text_btn cs_type_2 cs_semi_bold"
-                  href="#contact">Let’s Talk</a>
-              </div>
-            </div>
+        <div class="hero-content">
+          <!-- Status Badge -->
+          <div class="status-badge animate-on-scroll">
+            <span class="status-dot"></span>
+            Open to opportunities
           </div>
-          <div class="col-lg-6">
-            <div class="cs_hero_image_box cs_filled_bg" data-src="assets/img/bg/hero_bg_3.svg">
-              <div class="cs_imagebox_img w-100"><img src="assets/img/hero/hero_1.png" alt="heroImg"></div>
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1 class="hero-name"><span>Mukund R S</span></h1>
+          <p class="hero-title">Advanced Full-Stack Software Engineer</p>
+          <p class="hero-bio">I am a full-stack software engineer dedicated to building and scaling resilient digital solutions. I focus on clean architecture, secure engineering practices, and solving complex enterprise problems. <a href="#skills" class="skills-jump-link">Explore my skills &rarr;</a></p>
+
+          <div class="hero-socials">
+            <a href="https://github.com/mukund-9652" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/mukundrs/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="mailto:mukund.rs.2001@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-cta">
+            <a href="assets/files/Mukund-R-S-Resume.pdf" class="btn btn-primary" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn btn-outline">Let's Talk</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-glow"></div>
+          <div class="hero-image-wrapper">
+            <img src="assets/img/hero/hero_1.png" alt="Mukund R S — Software Engineer">
+            <!-- Floating Badge -->
+            <div class="floating-badge">
+              <span class="badge-icon">⚡</span>
+              <div class="badge-text">
+                <span class="badge-title">Full Stack</span>
+                <span class="badge-subtitle">Java &amp; Angular</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Start Hero Section -->
 
-    <!-- Start About Section -->
-    <section class="position-relative" id="about">
-      <div class="cs_height_150 cs_height_lg_80"></div>
+    <!-- ABOUT -->
+    <section class="section-alt" id="about">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="cs_pr_65">
-              <div class="cs_image_box cs_style_3 position-relative">
-                <div class="cs_imagebox_shape_about_2 position-absolute">
-                  <img src="assets/img/about_shape_3.svg" alt="">
-                </div>
-                <div class="cs_image_wrap cs_radius_20 overflow-hidden">
-                  <img class="w-100" src="assets/img/hero/hero_about.jpg" alt="about_2_image">
-                </div>
-              </div>
-            </div>
-            <div class="cs_height_lg_40"></div>
+        <div class="section-title animate-on-scroll">
+          <span class="section-label">About</span>
+          <h2>Building resilient software that solves complex problems</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-photo animate-on-scroll">
+            <img src="assets/img/hero/hero_about.jpg" alt="Mukund R S">
           </div>
-          <div class="col-lg-6">
-            <div class="cs_about cs_style_1 cs_pl_50">
-              <h3 class="cs_about_title cs_font_48 cs_semi_bold">I design and <span class="cs_accent_color">build resilient software</span> that solves complex user problems</h3>
-              <h4 class="cs_about_subtitle cs_font_36 cs_semi_bold">In summary</h4>
-              <ul class="cs_mp_0 cs_about_summary_list">
-                <li>
-                  <p class="m-0 text-capitalize">current location</p>
-                  <h5 class="cs_font_20 m-0 cs_semi_bold">Chennai, India</h5>
-                </li>
-                <li>
-                  <p class="m-0 text-capitalize">Education</p>
-                  <h5 class="cs_font_20 m-0 cs_semi_bold">B.E. in Computer Science Engineering</h5>
-                </li>
-                <li>
-                  <p class="m-0 text-capitalize">Interests</p>
-                  <h5 class="cs_font_20 m-0 cs_semi_bold">Traveling, Reading Books, Listening Music,
-                    Biking</h5>
-                </li>
-                <li>
-                  <p class="m-0 text-capitalize">email</p>
-                  <h5 class="cs_font_20 m-0 cs_semi_bold wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                    mukund.rs.2001@gmail.com</h5>
-                </li>
-              </ul>
+          <div>
+            <p class="animate-on-scroll" style="margin-bottom: 32px; font-size: 1.05rem; line-height: 1.85;">
+              I am an advanced full-stack engineer focused on crafting robust, scalable digital ecosystems. My experience spans architecting high-performance enterprise backends, engineering fluid user interfaces, and optimizing critical database infrastructures. Currently, I engineer mission-critical logistics software at e-Cargoware, delivering reliable solutions that power global freight operations for international clients.
+            </p>
+            <div class="about-details-grid">
+              <div class="about-card animate-on-scroll">
+                <p class="about-card-label">Location</p>
+                <p class="about-card-value">Chennai, India</p>
+              </div>
+              <div class="about-card animate-on-scroll">
+                <p class="about-card-label">Education</p>
+                <p class="about-card-value">B.E. in Computer Science</p>
+              </div>
+              <div class="about-card animate-on-scroll">
+                <p class="about-card-label">Email</p>
+                <p class="about-card-value"><a href="mailto:mukund.rs.2001@gmail.com">mukund.rs.2001@gmail.com</a></p>
+              </div>
+              <div class="about-card animate-on-scroll">
+                <p class="about-card-label">Interests</p>
+                <p class="about-card-value">Traveling, Reading, Music, Biking</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
-    <!-- End About Section -->
 
-    <!-- Start Slill and Education Section -->
-    <section class="cs_100_bg position-relative" id="resume" data-src="assets/img/bg/ed_and_skill_bg.png">
-      <div class="cs_slill_shape_1 position-absolute">
-        <img src="assets/img/skills_shape_1.svg" alt="skill and education ">
-      </div>
-      <div class="cs_height_140 cs_height_lg_80"></div>
+    <!-- EXPERIENCE -->
+    <section id="experience">
       <div class="container">
-        <div>
-          <div class="d-lg-flex justify-content-between">
-            <div class="cs_section_heading cs_style_1">
-              <h2 class="cs_section_title cs_font_48 cs_semi_bold wow fadeInUp" data-wow-duration="0.8s"
-                data-wow-delay="0.2s">I'm great in what I do<br> and <span class="cs_accent_color">I'm loving it</span>
-              </h2>
-            </div>
-            <div class="align-self-end">
-              <div class="cs_height_25 cs_height_lg_25"></div>
-              <a class="cs_portfolio_text_btn d-inline-flex cs_gap_25 align-items-center cs_font_24 cs_accent_color cs_semi_bold"
-                href="#contact">
-                <span class="cs_text_btn">Hire Me</span>
-                <span class="cs_circle_btn cs_style_1 cs_accent_color cs_center rounded-circle">
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 14L14 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M1 1H14V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 14L14 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M1 1H14V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="cs_height_70 cs_height_lg_40"></div>
+        <div class="section-title animate-on-scroll">
+          <span class="section-label">Experience</span>
+          <h2>Where I've worked</h2>
         </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="cs_education_wrap">
-              <h3 class="cs_font_36 mb-0">Experience</h3>
-              <div class="cs_height_25 cs_height_lg_15"></div>
-              <div class="cs_iconbox cs_style_3 d-flex align-items-center">
-                <div class="cs_iconbox_icon cs_accent_color_2 cs_filled_bg cs_center"
-                  data-src="assets/img/bg/iconbox_bg_3.svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                    <path
-                      d="M64 96c0-35.3 28.7-64 64-64l384 0c35.3 0 64 28.7 64 64l0 256-64 0 0-256L128 96l0 256-64 0L64 96zM0 403.2C0 392.6 8.6 384 19.2 384l601.6 0c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8L76.8 480C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"
-                      fill="currentColor" />
-                  </svg>
-                </div>
-                <div class="cs_iconbox_info">
-                  <p class="cs_iconbox_text mb-0">e-Cargoware</p>
-                  <p class="cs_iconbox_text mb-0 cs_accent_color">Advanced Full-Stack Software Engineer</p>
-                  <h3 class="cs_iconbox_title cs_font_24 cs_semi_bold mb-0">Aug 2023 - Present</h3>
-                </div>
-              </div>
-              <div class="cs_iconbox cs_style_3 d-flex align-items-center">
-                <div class="cs_iconbox_icon cs_accent_color_2 cs_filled_bg cs_center"
-                  data-src="assets/img/bg/iconbox_bg_3.svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                    <path
-                      d="M64 96c0-35.3 28.7-64 64-64l384 0c35.3 0 64 28.7 64 64l0 256-64 0 0-256L128 96l0 256-64 0L64 96zM0 403.2C0 392.6 8.6 384 19.2 384l601.6 0c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8L76.8 480C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"
-                      fill="currentColor" />
-                  </svg>
-                </div>
-                <div class="cs_iconbox_info">
-                  <p class="cs_iconbox_text mb-0">Cognizant</p>
-                  <p class="cs_iconbox_text mb-0 cs_accent_color">Program Analyst Trainee</p>
-                  <h3 class="cs_iconbox_title cs_font_24 cs_semi_bold mb-0">Jan 2023 - Jun 2023</h3>
-                </div>
-              </div>
-              <div class="cs_iconbox cs_style_3 d-flex align-items-center">
-                <div class="cs_iconbox_icon cs_accent_color_2 cs_filled_bg cs_center"
-                  data-src="assets/img/bg/iconbox_bg_3.svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                    <path
-                      d="M64 96c0-35.3 28.7-64 64-64l384 0c35.3 0 64 28.7 64 64l0 256-64 0 0-256L128 96l0 256-64 0L64 96zM0 403.2C0 392.6 8.6 384 19.2 384l601.6 0c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8L76.8 480C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"
-                      fill="currentColor" />
-                  </svg>
-                </div>
-                <div class="cs_iconbox_info">
-                  <p class="cs_iconbox_text mb-0">Evoltech</p>
-                  <p class="cs_iconbox_text mb-0 cs_accent_color">Technical and Operations Intern</p>
-                  <h3 class="cs_iconbox_title cs_font_24 cs_semi_bold mb-0">Feb 2022 - Aug 2022</h3>
-                </div>
-              </div>
-              <div class="cs_iconbox cs_style_3 d-flex align-items-center">
-                <div class="cs_iconbox_icon cs_accent_color_2 cs_filled_bg cs_center"
-                  data-src="assets/img/bg/iconbox_bg_3.svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                    <path
-                      d="M64 96c0-35.3 28.7-64 64-64l384 0c35.3 0 64 28.7 64 64l0 256-64 0 0-256L128 96l0 256-64 0L64 96zM0 403.2C0 392.6 8.6 384 19.2 384l601.6 0c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8L76.8 480C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"
-                      fill="currentColor" />
-                  </svg>
-                </div>
-                <div class="cs_iconbox_info">
-                  <p class="cs_iconbox_text mb-0">Softrate</p>
-                  <p class="cs_iconbox_text mb-0 cs_accent_color">Web Developer</p>
-                  <h3 class="cs_iconbox_title cs_font_24 cs_semi_bold mb-0">Apr 2021 - Sep 2021</h3>
-                </div>
-              </div>
-            </div>
-            <div class="cs_height_lg_40"></div>
-          </div>
-          <div class="col-lg-6">
-            <div class="cs_education_wrap">
-              <h3 class="cs_font_36 mb-0">Education</h3>
-              <div class="cs_height_25 cs_height_lg_15"></div>
-              <div class="cs_iconbox cs_style_3 d-flex align-items-center">
-                <div class="cs_iconbox_icon cs_accent_color_2 cs_filled_bg cs_center"
-                  data-src="assets/img/bg/iconbox_bg_3.svg">
-                  <svg width="37" height="32" viewBox="0 0 37 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M25.7148 26.5142C26.5064 26.1679 27.2705 25.762 28.0006 25.2999V30.8571C28.0006 31.1602 27.8802 31.4509 27.6659 31.6653C27.4515 31.8796 27.1608 32 26.8577 32C26.5546 32 26.2639 31.8796 26.0496 31.6653C25.8353 31.4509 25.7148 31.1602 25.7148 30.8571V26.5142ZM17.2719 9.74253C17.1334 10.0126 17.1052 10.3258 17.1932 10.6163C17.2811 10.9068 17.4783 11.1518 17.7433 11.2997L24.4291 14.8569L26.8577 13.5569L18.829 9.2711C18.559 9.13267 18.2457 9.10445 17.9553 9.19239C17.6648 9.28033 17.4198 9.47755 17.2719 9.74253ZM35.9721 9.2711L18.829 0.128104C18.6605 0.0438581 18.4746 0 18.2862 0C18.0977 0 17.9119 0.0438581 17.7433 0.128104L0.600192 9.2711C0.418457 9.37089 0.266872 9.51768 0.161288 9.69611C0.0557045 9.87454 0 10.0781 0 10.2854C0 10.4927 0.0557045 10.6962 0.161288 10.8747C0.266872 11.0531 0.418457 11.1999 0.600192 11.2997L4.00024 13.0997V20.2141C3.99809 20.7046 4.15889 21.182 4.45739 21.5713C5.58598 23.0856 9.9289 27.9999 18.2862 27.9999C20.8397 28.0212 23.3697 27.5104 25.7148 26.4999V15.5426L24.4291 14.8569L18.2862 18.1284L5.68598 11.414L3.57166 10.2854L18.2862 2.44242L33.0007 10.2854L30.8863 11.414L26.8577 13.5569L27.4006 13.8426C27.5938 13.9542 27.7521 14.1174 27.8577 14.314C27.9527 14.4791 28.0021 14.6665 28.0006 14.8569V25.2999C29.5792 24.3068 30.9717 23.0448 32.1149 21.5713C32.4134 21.182 32.5742 20.7046 32.5721 20.2141V13.0997L35.9721 11.2997C36.1539 11.1999 36.3055 11.0531 36.411 10.8747C36.5166 10.6962 36.5723 10.4927 36.5723 10.2854C36.5723 10.0781 36.5166 9.87454 36.411 9.69611C36.3055 9.51768 36.1539 9.37089 35.9721 9.2711Z"
-                      fill="currentColor" />
-                  </svg>
-                </div>
-                <div class="cs_iconbox_info">
-                  <p class="cs_iconbox_text mb-0">Sri Sairam Institute Of Technology</p>
-                  <p class="cs_iconbox_text mb-0 cs_accent_color">GPA: 8.09</p>
-                  <h3 class="cs_iconbox_title cs_font_24 cs_semi_bold mb-0">BE in CSE (2019 - 2023)</h3>
-                </div>
-              </div>
-              <div class="cs_iconbox cs_style_3 d-flex align-items-center">
-                <div class="cs_iconbox_icon cs_accent_color_2 cs_filled_bg cs_center"
-                  data-src="assets/img/bg/iconbox_bg_3.svg">
-                  <svg width="37" height="32" viewBox="0 0 37 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M25.7148 26.5142C26.5064 26.1679 27.2705 25.762 28.0006 25.2999V30.8571C28.0006 31.1602 27.8802 31.4509 27.6659 31.6653C27.4515 31.8796 27.1608 32 26.8577 32C26.5546 32 26.2639 31.8796 26.0496 31.6653C25.8353 31.4509 25.7148 31.1602 25.7148 30.8571V26.5142ZM17.2719 9.74253C17.1334 10.0126 17.1052 10.3258 17.1932 10.6163C17.2811 10.9068 17.4783 11.1518 17.7433 11.2997L24.4291 14.8569L26.8577 13.5569L18.829 9.2711C18.559 9.13267 18.2457 9.10445 17.9553 9.19239C17.6648 9.28033 17.4198 9.47755 17.2719 9.74253ZM35.9721 9.2711L18.829 0.128104C18.6605 0.0438581 18.4746 0 18.2862 0C18.0977 0 17.9119 0.0438581 17.7433 0.128104L0.600192 9.2711C0.418457 9.37089 0.266872 9.51768 0.161288 9.69611C0.0557045 9.87454 0 10.0781 0 10.2854C0 10.4927 0.0557045 10.6962 0.161288 10.8747C0.266872 11.0531 0.418457 11.1999 0.600192 11.2997L4.00024 13.0997V20.2141C3.99809 20.7046 4.15889 21.182 4.45739 21.5713C5.58598 23.0856 9.9289 27.9999 18.2862 27.9999C20.8397 28.0212 23.3697 27.5104 25.7148 26.4999V15.5426L24.4291 14.8569L18.2862 18.1284L5.68598 11.414L3.57166 10.2854L18.2862 2.44242L33.0007 10.2854L30.8863 11.414L26.8577 13.5569L27.4006 13.8426C27.5938 13.9542 27.7521 14.1174 27.8577 14.314C27.9527 14.4791 28.0021 14.6665 28.0006 14.8569V25.2999C29.5792 24.3068 30.9717 23.0448 32.1149 21.5713C32.4134 21.182 32.5742 20.7046 32.5721 20.2141V13.0997L35.9721 11.2997C36.1539 11.1999 36.3055 11.0531 36.411 10.8747C36.5166 10.6962 36.5723 10.4927 36.5723 10.2854C36.5723 10.0781 36.5166 9.87454 36.411 9.69611C36.3055 9.51768 36.1539 9.37089 35.9721 9.2711Z"
-                      fill="currentColor" />
-                  </svg>
-                </div>
-                <div class="cs_iconbox_info">
-                  <p class="cs_iconbox_text mb-0">P.S.Senior Secondary School</p>
-                  <p class="cs_iconbox_text mb-0 cs_accent_color">GPA: 8.76</p>
-                  <h3 class="cs_iconbox_title cs_font_24 cs_semi_bold mb-0">Senior Secondary(2017 - 2019)</h3>
-                </div>
-              </div>
-            </div>
-            <div class="cs_height_lg_40"></div>
-          </div>
-          <div class="cs_height_25 cs_height_lg_15"></div>
-          <div class="col-lg-6">
-            <div class="cs_slill_wrap">
-              <h3 class="cs_font_36 mb-0">Programming Languages</h3>
-              <div class="cs_height_25 cs_height_lg_15"></div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Java</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">90%</h3>
-                <div class="cs_progress" data-progress="90">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Javascript</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">90%</h3>
-                <div class="cs_progress" data-progress="90">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Typescript</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">85%</h3>
-                <div class="cs_progress" data-progress="85">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">SQL (PostgreSQL / MySQL)</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">85%</h3>
-                <div class="cs_progress" data-progress="85">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Python</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">75%</h3>
-                <div class="cs_progress" data-progress="75">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="cs_slill_wrap  cs_pl_50">
-              <h3 class="cs_font_36 mb-0">Frameworks</h3>
-              <div class="cs_height_25 cs_height_lg_15"></div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Angular</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">90%</h3>
-                <div class="cs_progress" data-progress="90">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Spring Boot / Hibernate</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">85%</h3>
-                <div class="cs_progress" data-progress="85">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Django / Flask</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">75%</h3>
-                <div class="cs_progress" data-progress="75">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Flutter</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">65%</h3>
-                <div class="cs_progress" data-progress="65">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cs_height_70 cs_height_lg_40"></div>
 
-          <div class="col-lg-6">
-            <div class="cs_slill_wrap">
-              <h3 class="cs_font_36 mb-0">Cloud & DevOps</h3>
-              <div class="cs_height_25 cs_height_lg_15"></div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">AWS Cloud Services</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">80%</h3>
-                <div class="cs_progress" data-progress="80">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Database Migration & Admin</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">85%</h3>
-                <div class="cs_progress" data-progress="85">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Secure Coding Practices</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">80%</h3>
-                <div class="cs_progress" data-progress="80">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Docker & CI/CD Pipelines</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">75%</h3>
-                <div class="cs_progress" data-progress="75">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-            </div>
+        <div class="timeline">
+          <div class="timeline-item animate-on-scroll">
+            <p class="timeline-company">e-Cargoware</p>
+            <h3 class="timeline-role">Advanced Full-Stack Software Engineer</h3>
+            <p class="timeline-date">Aug 2023 — Present</p>
           </div>
-          <div class="col-lg-6">
-            <div class="cs_slill_wrap cs_pl_50">
-              <h3 class="cs_font_36 mb-0">Languages</h3>
-              <div class="cs_height_25 cs_height_lg_15"></div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">English</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">85%</h3>
-                <div class="cs_progress" data-progress="85">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Tamil</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">70%</h3>
-                <div class="cs_progress" data-progress="70">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-              <div class="cs_progressbar cs_style_2">
-                <div class="label cs_font_20 cs_semi_bold">Hindi</div>
-                <h3 class="cs_progressbar_head cs_ternary_color cs_normal cs_font_14 text-end">65%</h3>
-                <div class="cs_progress" data-progress="65">
-                  <div class="cs_progress_in"></div>
-                </div>
-              </div>
-            </div>
+          <div class="timeline-item animate-on-scroll">
+            <p class="timeline-company">Cognizant</p>
+            <h3 class="timeline-role">Program Analyst Trainee</h3>
+            <p class="timeline-date">Jan 2023 — Jun 2023</p>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <p class="timeline-company">Evoltech</p>
+            <h3 class="timeline-role">Technical &amp; Operations Intern</h3>
+            <p class="timeline-date">Feb 2022 — Aug 2022</p>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <p class="timeline-company">Softrate</p>
+            <h3 class="timeline-role">Web Developer</h3>
+            <p class="timeline-date">Apr 2021 — Sep 2021</p>
           </div>
         </div>
       </div>
-      <div class="cs_height_80 cs_height_lg_50"></div>
     </section>
-    <!-- End Slill and Education Section -->
 
-    <!--Start Contact Section-->
-    <section class="position-relative" id="contact">
-      <div class="cs_service_shape_1 position-absolute">
-        <img src="assets/img/service_shape_1.svg" alt="">
-      </div>
-      <div class="cs_height_115 cs_height_lg_45"></div>
-      <div class=" container-fluid">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <div class="cs_section_heading cs_style_1">
-              <h2 class="cs_section_title cs_font_48 cs_semi_bold wow fadeInUp" data-wow-duration="0.8s"
-                data-wow-delay="0.2s">Reach out for collaborations, recruitment, or to simply connect!<br/><span class="cs_accent_color">I’d love to hear from you! </span>
-              </h2>
+    <!-- SKILLS -->
+    <section class="section-alt" id="skills">
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="section-label">Skills</span>
+          <h2>Technologies I work with</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group animate-on-scroll">
+            <h4 class="skill-group-title">Backend</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Spring Boot</span>
+              <span class="skill-chip">Hibernate JPA</span>
+              <span class="skill-chip">REST APIs</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">Django</span>
+              <span class="skill-chip">Flask</span>
             </div>
-            <div class="cs_height_40"></div>
-
-            <form name="contact" method="POST" data-netlify="true">
-              <input class="form-control" type="text" name="name" id="f_name" placeholder="Name" required>
-              <div class="cs_height_25 cs_height_lg_25"></div>
-              <input class="form-control" type="email" name="email" id="email" placeholder="Email" required>
-              <div class="cs_height_25 cs_height_lg_25"></div>
-              <textarea class="form-control" name="message" placeholder="Your message" cols="30" rows="5"
-                required></textarea>
-              <div class="cs_height_25 cs_height_lg_25"></div>
-              <div class="field">
-                <div class="recaptcha" data-netlify-recaptcha="true">
-                </div>
-              </div>
-              <div class="cs_height_25 cs_height_lg_25"></div>
-
-              <button type="submit" class="cs_btn cs_style_1 cs_primary_font"><span>Send Message</span></button>
-            </form>
+          </div>
+          <div class="skill-group animate-on-scroll">
+            <h4 class="skill-group-title">Frontend</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">Angular</span>
+              <span class="skill-chip">TypeScript</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">HTML5</span>
+              <span class="skill-chip">CSS3</span>
+              <span class="skill-chip">Flutter</span>
+            </div>
+          </div>
+          <div class="skill-group animate-on-scroll">
+            <h4 class="skill-group-title">Database</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">PostgreSQL</span>
+              <span class="skill-chip">MySQL</span>
+              <span class="skill-chip">Database Migration</span>
+              <span class="skill-chip">Query Optimization</span>
+            </div>
+          </div>
+          <div class="skill-group animate-on-scroll">
+            <h4 class="skill-group-title">Cloud &amp; DevOps</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">AWS</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">CI/CD Pipelines</span>
+              <span class="skill-chip">Secure Coding</span>
+            </div>
+          </div>
+          <div class="skill-group animate-on-scroll">
+            <h4 class="skill-group-title">AI Tools</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">Prompt Engineering</span>
+              <span class="skill-chip">Accurate Prompting</span>
+              <span class="skill-chip">Multimodal Prompting</span>
+              <span class="skill-chip">LLM Workflows</span>
+              <span class="skill-chip">Claude Code</span>
+              <span class="skill-chip">Antigravity</span>
+              <span class="skill-chip">Abacus.AI</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
-    <!--End Contact Section-->
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="section-label">Education</span>
+          <h2>Academic background</h2>
+        </div>
+
+        <div class="education-grid">
+          <div class="education-card animate-on-scroll">
+            <h3 class="education-institution">Sri Sairam Institute of Technology</h3>
+            <p class="education-degree">B.E. in Computer Science &amp; Engineering</p>
+            <div class="education-meta">
+              <span>2019 — 2023</span>
+              <span class="gpa">GPA: 8.09</span>
+            </div>
+          </div>
+          <div class="education-card animate-on-scroll">
+            <h3 class="education-institution">P.S. Senior Secondary School</h3>
+            <p class="education-degree">Senior Secondary (XII)</p>
+            <div class="education-meta">
+              <span>2017 — 2019</span>
+              <span class="gpa">GPA: 8.76</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="section-label">Certifications</span>
+          <h2>Professional Credentials</h2>
+        </div>
+
+        <div class="certifications-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Google</div>
+              <h3 class="cert-title">Use AI as a Creative or Expert Partner</h3>
+              <p class="cert-date">Issued Jul 2026</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">QL5II5ZNLI05</span></p>
+              <p class="cert-skills">Skills: Accurate Prompting, Multimodal Prompting</p>
+            </div>
+          </div>
+          <!-- Cert 2 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Google</div>
+              <h3 class="cert-title">Design Prompts for Everyday Work Tasks</h3>
+              <p class="cert-date">Issued Jul 2026</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">YX22CYQPWSJ4</span></p>
+              <p class="cert-skills">Skills: Prompt Engineering, Prompt Writing</p>
+            </div>
+          </div>
+          <!-- Cert 3 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Google</div>
+              <h3 class="cert-title">Start Writing Prompts like a Pro</h3>
+              <p class="cert-date">Issued Jul 2026</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">EYZFB72JC6T4</span></p>
+              <p class="cert-skills">Skills: Prompt Engineering, Prompt Writing</p>
+            </div>
+          </div>
+          <!-- Cert 4 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Google</div>
+              <h3 class="cert-title">Foundations of Cybersecurity</h3>
+              <p class="cert-date">Issued Dec 2025</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">IBA517ZV23NQ</span></p>
+              <p class="cert-skills">Skills: Cybersecurity</p>
+            </div>
+          </div>
+          <!-- Cert 5 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">e-CARGOWARE Ltd</div>
+              <h3 class="cert-title">Certificate of achievement</h3>
+              <p class="cert-date">Issued Aug 2025</p>
+            </div>
+            <div class="cert-meta">
+              <p class="cert-skills">Skills: Angular, AngularJS</p>
+            </div>
+          </div>
+          <!-- Cert 6 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Google (Coursera)</div>
+              <h3 class="cert-title">Foundations of Data Science</h3>
+              <p class="cert-date">Issued Aug 2024</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">ZMVVWM5ENX59</span></p>
+              <p class="cert-skills">Skills: Data Science, Data Analysis</p>
+            </div>
+          </div>
+          <!-- Cert 7 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">ICT Academy</div>
+              <h3 class="cert-title">IBM Nalaiya Thiran Project Certificate</h3>
+              <p class="cert-date">Issued Feb 2023</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">42d53a5ebdc14deeadb6ffbc4bab50d8</span></p>
+              <p class="cert-skills">Skills: Jira, Teamwork</p>
+            </div>
+          </div>
+          <!-- Cert 8 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Udemy</div>
+              <h3 class="cert-title">Responsive Web Design: HTML5 + CSS3</h3>
+              <p class="cert-date">Issued Feb 2023</p>
+            </div>
+            <div class="cert-meta">
+              <p class="cert-skills">Skills: HTML5, CSS3</p>
+            </div>
+          </div>
+          <!-- Cert 9 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Udemy</div>
+              <h3 class="cert-title">Build a Backend REST API with Python &amp; Django</h3>
+              <p class="cert-date">Issued Dec 2022</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">UC-a1877d4e-180e-4676-b273-77ade9ccd020</span></p>
+              <p class="cert-skills">Skills: Python, Django, REST API</p>
+            </div>
+          </div>
+          <!-- Cert 10 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Udemy</div>
+              <h3 class="cert-title">Python Django Dev To Deployment</h3>
+              <p class="cert-date">Issued Oct 2022</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">UC-d15a44be-952d-45f8-8ae9-bb9890a6a305</span></p>
+              <p class="cert-skills">Skills: Python (Programming Language), HTML</p>
+            </div>
+          </div>
+          <!-- Cert 11 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">HCL GUVI</div>
+              <h3 class="cert-title">Modern HTML &amp; CSS</h3>
+              <p class="cert-date">Issued Feb 2022</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">U7636D433Em5774u1z</span></p>
+              <p class="cert-skills">Skills: HTML</p>
+            </div>
+          </div>
+          <!-- Cert 12 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Forage</div>
+              <h3 class="cert-title">Accenture Nordic Developer Program</h3>
+              <p class="cert-date">Issued May 2021</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">yC5Au7KGSTJfwgC8</span></p>
+            </div>
+          </div>
+          <!-- Cert 13 -->
+          <div class="cert-card animate-on-scroll">
+            <div>
+              <div class="cert-issuer">Forage</div>
+              <h3 class="cert-title">JPMorgan Chase Software Engineering</h3>
+              <p class="cert-date">Issued Aug 2020</p>
+            </div>
+            <div class="cert-meta">
+              <p>ID: <span class="cert-id">3sDC9vT2RPWrNJqQ9</span></p>
+              <p class="cert-skills">Skills: HTML</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="section-alt" id="achievements">
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="section-label">Achievements</span>
+          <h2>Milestones &amp; recognition</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <!-- Award 1 -->
+          <div class="achievement-card animate-on-scroll">
+            <div class="achievement-icon">🏆</div>
+            <div class="achievement-info">
+              <p class="achievement-date">Aug 2022</p>
+              <h3>Winner of Smart India Hackathon</h3>
+              <p>Designed and built a <strong>Fog Prediction System</strong> using Amazon cloud tools to address critical flight and transport safety issues. Leveraging predictive analytics and real-time weather data streams, the system provides early warning indicators to help prevent weather-related accidents in aviation and ground transport.</p>
+            </div>
+          </div>
+
+          <!-- Award 2 -->
+          <div class="achievement-card animate-on-scroll">
+            <div class="achievement-icon">⭐</div>
+            <div class="achievement-info">
+              <p class="achievement-date">Oct 2021</p>
+              <h3>Best Employee Award (Web Development)</h3>
+              <p>Recognized by <strong>Softrate India</strong> for exceptional performance, prompt delivery, and technical dedication in implementing and shipping production-grade web applications.</p>
+            </div>
+          </div>
+
+          <!-- Award 3 -->
+          <div class="achievement-card animate-on-scroll">
+            <div class="achievement-icon">🥉</div>
+            <div class="achievement-info">
+              <p class="achievement-date">Apr 2021</p>
+              <h3>Ideathon — 2nd Runner Up</h3>
+              <p>Awarded 2nd runner up at the national-level Ideathon organized by <strong>Sri Sairam Institute of Technology</strong> for pitching an innovative solution to address systemic efficiency bottlenecks.</p>
+            </div>
+          </div>
+
+          <!-- Award 4 -->
+          <div class="achievement-card animate-on-scroll">
+            <div class="achievement-icon">🏅</div>
+            <div class="achievement-info">
+              <p class="achievement-date">Nov 2020</p>
+              <h3>Top 10 in Contest of Interactive Login Forms</h3>
+              <p>Secured a top 10 position in a global front-end challenge hosted by <strong>Html Hints</strong> for designing and coding highly interactive, accessible, and creative user login experiences.</p>
+            </div>
+          </div>
+
+          <!-- Award 5 -->
+          <div class="achievement-card animate-on-scroll">
+            <div class="achievement-icon">🎓</div>
+            <div class="achievement-info">
+              <p class="achievement-date">Aug 2019</p>
+              <h3>Best Project Award in Informatics Practices</h3>
+              <p>Awarded by <strong>P.S. Senior Secondary School</strong> for engineering an Integrated Social Media System in Java, simulating email communications, search indexes, and group chats.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title animate-on-scroll">
+          <span class="section-label">Contact</span>
+          <h2>Let's work together</h2>
+          <p>Reach out for collaborations, recruitment, or to simply connect. I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info animate-on-scroll">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <p class="contact-item-value"><a href="mailto:mukund.rs.2001@gmail.com">mukund.rs.2001@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">GitHub</p>
+                <p class="contact-item-value"><a href="https://github.com/mukund-9652" target="_blank"
+                    rel="noopener">github.com/mukund-9652</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">LinkedIn</p>
+                <p class="contact-item-value"><a href="https://www.linkedin.com/in/mukundrs/" target="_blank"
+                    rel="noopener">linkedin.com/in/mukundrs</a></p>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form animate-on-scroll" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+            <input class="form-input" type="text" name="name" id="f_name" placeholder="Your name" required>
+            <input class="form-input" type="email" name="email" id="email" placeholder="Your email" required>
+            <textarea class="form-textarea" name="message" placeholder="Your message" rows="5" required></textarea>
+            <div data-netlify-recaptcha="true"></div>
+            <button type="submit" class="btn btn-primary">
+              Send Message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
-  <!-- Main content inside end-->
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Mukund R S. Crafted with precision.</p>
+    </div>
+  </footer>
+
   <!-- Script -->
-  <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/plugins/gsap.min.js"></script>
-  <script src="assets/js/plugins/isotope.pkg.min.js"></script>
-  <script src="assets/js/plugins/odometer.min.js"></script>
-  <script src="assets/js/plugins/wow.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
