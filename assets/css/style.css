@@ -1210,8 +1210,8 @@ section {
    16. Separator
    ---------------------------------------------------------------- */
 .section-alt {
-  background: var(--bg-secondary);
-  transition: background-color 0.4s ease;
+  background: transparent;
+  position: relative;
 }
 
 /* ----------------------------------------------------------------

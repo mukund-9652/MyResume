@@ -192,6 +192,18 @@
       }
       draw(ctx, color) {
         ctx.save();
+        
+        // Draw futuristic glowing road
+        const wheelY = this.y + 5.4;
+        ctx.beginPath();
+        ctx.moveTo(0, wheelY);
+        ctx.lineTo(window.innerWidth, wheelY);
+        ctx.strokeStyle = color;
+        ctx.globalAlpha = 0.15;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.globalAlpha = 1.0;
+
         ctx.translate(this.x, this.y);
         ctx.scale(this.direction * 1.8, 1.8);
         
@@ -404,6 +416,28 @@
     const sections = Array.from(document.querySelectorAll('section'));
 
     function checkCollisions(themeColor) {
+        // Truck vs Truck
+        for (let i = 0; i < trucks.length; i++) {
+            for (let j = i + 1; j < trucks.length; j++) {
+                const t1 = trucks[i];
+                const t2 = trucks[j];
+                const dx = t1.x - t2.x;
+                const dy = t1.y - t2.y;
+                if (Math.sqrt(dx*dx + dy*dy) < 60) {
+                    if (!t1.passed && !t2.passed) {
+                        t1.passed = true;
+                        t2.passed = true;
+                        if (Math.random() < 0.3) { // 30% chance to burst
+                            triggerBurst((t1.x + t2.x)/2, t1.y, themeColor);
+                            trucks.splice(j, 1);
+                            trucks.splice(i, 1);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
         // Flight vs Flight
         for (let i = 0; i < flights.length; i++) {
             for (let j = i + 1; j < flights.length; j++) {
