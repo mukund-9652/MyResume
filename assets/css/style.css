@@ -1293,7 +1293,11 @@ section {
   .about-photo {
     max-width: 240px;
     margin: 0 auto;
-    aspect-ratio: 1;
+    aspect-ratio: 3/4; /* Don't crop to a square on mobile */
+  }
+
+  .about-photo img {
+    object-position: top; /* Prevents top of head cropping */
   }
 
   .about-details-grid {
@@ -1579,4 +1583,76 @@ section {
 .speed-btn.active {
   background: var(--accent);
   color: #ffffff;
+}
+
+.min-max-btn {
+  padding-left: 12px;
+  border-left: 1px solid var(--border);
+}
+
+.min-max-btn:hover {
+  color: var(--accent);
+}
+
+/* Minimized State */
+.auto-scroll-widget.minimized {
+  gap: 0;
+  padding: 8px;
+}
+
+.auto-scroll-widget.minimized .toggle-scroll,
+.auto-scroll-widget.minimized .scroll-speeds {
+  display: none;
+}
+
+.auto-scroll-widget.minimized .min-max-btn {
+  border-left: none;
+  padding-left: 0;
+}
+
+/* ----------------------------------------------------------------
+   20. Scroll to Top Button (All Devices)
+   ---------------------------------------------------------------- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: var(--accent-subtle);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    bottom: 84px; /* Push it above the auto-scroll widget on mobile */
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
 }

@@ -694,11 +694,17 @@
     toggleBtn.addEventListener('click', () => {
       isAutoScrolling = !isAutoScrolling;
       if (isAutoScrolling) {
+        // Disable CSS smooth scroll to allow JS engine full control
+        document.documentElement.style.scrollBehavior = 'auto';
+        
         // Switch to pause icon
         toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>';
         toggleBtn.classList.add('playing');
         autoScrollRaf = requestAnimationFrame(autoScrollLoop);
       } else {
+        // Restore CSS smooth scroll
+        document.documentElement.style.scrollBehavior = '';
+        
         // Switch back to play icon
         toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>';
         toggleBtn.classList.remove('playing');
@@ -712,6 +718,49 @@
         e.target.classList.add('active');
         scrollSpeed = parseInt(e.target.getAttribute('data-speed'));
       });
+    });
+
+    const minMaxBtn = document.getElementById('minMaxBtn');
+    let isMinimized = false;
+    
+    if (minMaxBtn) {
+      minMaxBtn.addEventListener('click', () => {
+        isMinimized = !isMinimized;
+        if (isMinimized) {
+          autoScrollWidget.classList.add('minimized');
+          // Switch to Plus icon
+          minMaxBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>';
+        } else {
+          autoScrollWidget.classList.remove('minimized');
+          // Switch to Minus icon
+          minMaxBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>';
+        }
+      });
+    }
+  }
+
+  /* ----------------------------------------------------------------
+     Scroll to Top Button (Global)
+     ---------------------------------------------------------------- */
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }, {passive: true});
+
+    scrollTopBtn.addEventListener('click', () => {
+      // If auto-scroll is actively playing, pause it automatically
+      const toggleScrollBtn = document.getElementById('toggleScrollBtn');
+      if (toggleScrollBtn && toggleScrollBtn.classList.contains('playing')) {
+        toggleScrollBtn.click(); // This cleanly pauses the engine and resets the icon
+      }
+
+      document.documentElement.style.scrollBehavior = 'smooth';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 

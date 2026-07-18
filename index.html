@@ -740,17 +740,29 @@
 
   <!-- Auto Scroll Mobile Widget -->
   <div class="auto-scroll-widget" id="autoScrollWidget">
-    <button class="scroll-btn toggle-scroll" id="toggleScrollBtn">
+    <button class="scroll-btn toggle-scroll" id="toggleScrollBtn" aria-label="Play/Pause Auto Scroll">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
         <polygon points="5 3 19 12 5 21 5 3"></polygon>
       </svg>
     </button>
-    <div class="scroll-speeds">
+    <div class="scroll-speeds" id="scrollSpeeds">
       <button class="scroll-btn speed-btn active" data-speed="1">1x</button>
       <button class="scroll-btn speed-btn" data-speed="2">2x</button>
       <button class="scroll-btn speed-btn" data-speed="3">3x</button>
     </div>
+    <button class="scroll-btn min-max-btn" id="minMaxBtn" aria-label="Minimize/Maximize">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+    </button>
   </div>
+
+  <!-- Scroll to Top Button (All Devices) -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to Top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <!-- Script -->
   <script src="assets/js/main.js" defer></script>
