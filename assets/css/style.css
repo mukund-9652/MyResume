@@ -305,7 +305,8 @@ section {
   gap: 12px;
 }
 
-.theme-toggle {
+.theme-toggle,
+.aesthetics-toggle {
   width: 40px;
   height: 40px;
   display: flex;
@@ -314,11 +315,39 @@ section {
   border-radius: 10px;
   color: var(--text-secondary);
   transition: background 0.25s ease, color 0.25s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.aesthetics-toggle:hover {
   background: var(--accent-subtle);
   color: var(--accent);
+}
+
+/* Minimal Mode Overrides */
+body.minimal-mode .bg-canvas {
+  display: none !important;
+}
+
+body.minimal-mode .hero-glow {
+  display: none !important;
+}
+
+body.minimal-mode .animated-border-card::before,
+body.minimal-mode .animated-border-card::after {
+  display: none !important;
+}
+
+body.minimal-mode .animated-border-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+body.minimal-mode .section-alt {
+  background: var(--bg-secondary) !important;
 }
 
 .theme-toggle .icon-sun { display: var(--toggle-icon-display-sun); }
@@ -1074,6 +1103,55 @@ section {
 }
 
 /* ----------------------------------------------------------------
+   12d. Personal Section (Beyond the Code)
+   ---------------------------------------------------------------- */
+.personal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.personal-card {
+  padding: 28px 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.personal-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.personal-info h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.personal-info p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.personal-info strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------------
    13. Contact Section
    ---------------------------------------------------------------- */
 .contact-grid {
@@ -1251,8 +1329,10 @@ section {
     gap: 40px;
   }
 
-  .leadership-grid {
-    grid-template-columns: 1fr 1fr;
+  .cert-grid,
+  .leadership-grid,
+  .personal-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1320,7 +1400,9 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .leadership-grid {
+  .cert-grid,
+  .leadership-grid,
+  .personal-grid {
     grid-template-columns: 1fr;
   }
 

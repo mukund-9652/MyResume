@@ -12,15 +12,38 @@
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
 
-  // Load saved theme or default to dark
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  html.setAttribute('data-theme', savedTheme);
+  // Always default to light theme on load
+  html.setAttribute('data-theme', 'light');
 
   themeToggle.addEventListener('click', () => {
     const current = html.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+  });
+
+  // ----------------------------------------------------------------
+  // 1b. Aesthetics Toggle (Minimal / Advanced)
+  // ----------------------------------------------------------------
+  const aestheticsToggle = document.getElementById('aestheticsToggle');
+  const iconAdvanced = document.querySelector('.icon-advanced');
+  const iconMinimal = document.querySelector('.icon-minimal');
+  
+  // Always default to minimal on load
+  document.body.classList.add('minimal-mode');
+  iconAdvanced.style.display = 'none';
+  iconMinimal.style.display = 'block';
+
+  aestheticsToggle.addEventListener('click', () => {
+    document.body.classList.toggle('minimal-mode');
+    const isMinimal = document.body.classList.contains('minimal-mode');
+    
+    if (isMinimal) {
+      iconAdvanced.style.display = 'none';
+      iconMinimal.style.display = 'block';
+    } else {
+      iconAdvanced.style.display = 'block';
+      iconMinimal.style.display = 'none';
+    }
   });
 
   // ----------------------------------------------------------------
@@ -494,6 +517,12 @@
 
     function draw() {
       ctx.clearRect(0, 0, width, height);
+
+      // In Minimal Mode, completely pause the heavy physics and rendering calculations
+      if (document.body.classList.contains('minimal-mode')) {
+        requestAnimationFrame(draw);
+        return;
+      }
       
       const theme = document.documentElement.getAttribute('data-theme') || 'dark';
       const isDark = theme === 'dark';
