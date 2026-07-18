@@ -12,8 +12,8 @@
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
 
-  // Restore saved theme or default to light
-  const savedTheme = localStorage.getItem('mukund-theme') || 'light';
+  // Restore saved theme or default to dark
+  const savedTheme = localStorage.getItem('mukund-theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
 
   // Set hero image based on saved theme
