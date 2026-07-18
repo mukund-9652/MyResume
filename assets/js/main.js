@@ -52,6 +52,40 @@
   const mobIconAdvanced = document.querySelector('.mob-icon-advanced');
   const mobIconMinimal = document.querySelector('.mob-icon-minimal');
   
+  // Dynamic Three.js CDN loader
+  let threeInitializing = false;
+  function ensureThreeJs(callback) {
+    if (window.THREE) {
+      if (callback) callback();
+      return;
+    }
+    if (threeInitializing) return;
+    threeInitializing = true;
+    
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    script.onload = () => {
+      threeInitializing = false;
+      if (typeof window.initThreeEngine === 'function') {
+        window.initThreeEngine();
+      }
+      if (callback) callback();
+    };
+    script.onerror = () => {
+      threeInitializing = false;
+      console.error('Failed to load Three.js from CDN.');
+    };
+    document.head.appendChild(script);
+  }
+
+  function startThreeEngine() {
+    ensureThreeJs(() => {
+      if (typeof window.initThreeEngine === 'function') {
+        window.initThreeEngine();
+      }
+    });
+  }
+
   // Restore saved animation preference or default to minimal
   const savedAesthetics = localStorage.getItem('mukund-animations');
   const startMinimal = savedAesthetics === null ? true : savedAesthetics === 'minimal';
@@ -60,6 +94,7 @@
     document.body.classList.add('minimal-mode');
   } else {
     document.body.classList.remove('minimal-mode');
+    startThreeEngine(); // Lazy-load Three.js on load if animation is active
   }
 
   // Set icons based on saved state
@@ -80,6 +115,10 @@
     // Update mobile bar icons
     if (mobIconAdvanced) mobIconAdvanced.style.display = isMinimal ? 'block' : 'none';
     if (mobIconMinimal) mobIconMinimal.style.display = isMinimal ? 'none' : 'block';
+
+    if (!isMinimal) {
+      startThreeEngine(); // Lazy-load Three.js if animations are enabled
+    }
   }
 
   aestheticsToggle.addEventListener('click', toggleAesthetics);
@@ -841,8 +880,14 @@
      Three.js — Holographic Arc Reactor / Skill Atom
      Inspired by Iron Man HUD — Skills orbit as glowing electrons
      ---------------------------------------------------------------- */
-  const container3d = document.getElementById('about3DContainer');
-  if (container3d && typeof THREE !== 'undefined') {
+  let isThreeInitialized = false;
+
+  window.initThreeEngine = function() {
+    const container3d = document.getElementById('about3DContainer');
+    if (!container3d || isThreeInitialized) return;
+    if (typeof THREE === 'undefined') return;
+
+    isThreeInitialized = true;
 
     // ── Setup ───────────────────────────────────────────────────────
     const skills = [
