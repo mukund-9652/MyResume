@@ -648,4 +648,71 @@
     draw();
   }
 
+  /* ----------------------------------------------------------------
+     Auto-Scroll Engine (Mobile)
+     ---------------------------------------------------------------- */
+  const autoScrollWidget = document.getElementById('autoScrollWidget');
+  if (autoScrollWidget) {
+    const toggleBtn = document.getElementById('toggleScrollBtn');
+    const speedBtns = document.querySelectorAll('.speed-btn');
+    
+    let isAutoScrolling = false;
+    let scrollSpeed = 1; 
+    let scrollDirection = 1; 
+    let autoScrollRaf = null;
+    let isUserScrolling = false;
+    let scrollTimeout;
+
+    // Detect user manual scroll to seamlessly pause engine
+    window.addEventListener('touchstart', () => { isUserScrolling = true; }, {passive: true});
+    window.addEventListener('touchend', () => { isUserScrolling = false; }, {passive: true});
+    window.addEventListener('wheel', () => { 
+      isUserScrolling = true; 
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => { isUserScrolling = false; }, 500);
+    }, {passive: true});
+
+    function autoScrollLoop() {
+      if (!isAutoScrolling) return;
+
+      if (!isUserScrolling) {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        
+        // Bounce logic (reverse direction at top/bottom bounds)
+        if (window.scrollY >= maxScroll - 2 && scrollDirection === 1) {
+          scrollDirection = -1; // Reverse up
+        } else if (window.scrollY <= 1 && scrollDirection === -1) {
+          scrollDirection = 1; // Reverse down
+        }
+
+        window.scrollBy(0, scrollSpeed * scrollDirection * 1.5);
+      }
+      
+      autoScrollRaf = requestAnimationFrame(autoScrollLoop);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      isAutoScrolling = !isAutoScrolling;
+      if (isAutoScrolling) {
+        // Switch to pause icon
+        toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>';
+        toggleBtn.classList.add('playing');
+        autoScrollRaf = requestAnimationFrame(autoScrollLoop);
+      } else {
+        // Switch back to play icon
+        toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>';
+        toggleBtn.classList.remove('playing');
+        cancelAnimationFrame(autoScrollRaf);
+      }
+    });
+
+    speedBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        speedBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        scrollSpeed = parseInt(e.target.getAttribute('data-speed'));
+      });
+    });
+  }
+
 })();
