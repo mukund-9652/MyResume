@@ -749,6 +749,20 @@ section {
   font-weight: 400;
 }
 
+.timeline-details {
+  margin-top: 12px;
+  padding-left: 18px;
+  list-style-type: disc;
+}
+
+.timeline-details li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+
 /* ----------------------------------------------------------------
    10. Skills Section
    ---------------------------------------------------------------- */
@@ -984,6 +998,60 @@ section {
 }
 
 /* ----------------------------------------------------------------
+   12c. Leadership & Community Section
+   ---------------------------------------------------------------- */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.leadership-card {
+  padding: 28px 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.leadership-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.leadership-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.leadership-role {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.leadership-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.leadership-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: 10px;
+}
+
+/* ----------------------------------------------------------------
    13. Contact Section
    ---------------------------------------------------------------- */
 .contact-grid {
@@ -1160,6 +1228,10 @@ section {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .leadership-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Mobile */
@@ -1219,6 +1291,10 @@ section {
   }
 
   .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-grid {
     grid-template-columns: 1fr;
   }
 
