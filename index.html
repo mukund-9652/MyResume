@@ -36,10 +36,21 @@
 
 <body>
 
+  <!-- Background Parallax Glowing Orbs -->
+  <div class="bg-orbs-container">
+    <div class="bg-orb bg-orb-1" id="orb1"></div>
+    <div class="bg-orb bg-orb-2" id="orb2"></div>
+    <div class="bg-orb bg-orb-3" id="orb3"></div>
+  </div>
+
+  <!-- Interactive Canvas Background Grid -->
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+
   <!-- ============================================================
        NAVIGATION
        ============================================================ -->
   <header class="navbar" id="navbar">
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
     <div class="container">
       <a href="#hero" class="nav-logo">Mukund<span>.</span></a>
 
@@ -177,19 +188,19 @@
               I am an advanced full-stack engineer focused on crafting robust, scalable digital ecosystems. My experience spans architecting high-performance enterprise backends, engineering fluid user interfaces, and optimizing critical database infrastructures. Currently, I engineer mission-critical logistics software at e-Cargoware, delivering reliable solutions that power global freight operations for international clients.
             </p>
             <div class="about-details-grid">
-              <div class="about-card animate-on-scroll">
+              <div class="about-card animate-on-scroll animated-border-card">
                 <p class="about-card-label">Location</p>
                 <p class="about-card-value">Chennai, India</p>
               </div>
-              <div class="about-card animate-on-scroll">
+              <div class="about-card animate-on-scroll animated-border-card">
                 <p class="about-card-label">Education</p>
                 <p class="about-card-value">B.E. in Computer Science</p>
               </div>
-              <div class="about-card animate-on-scroll">
+              <div class="about-card animate-on-scroll animated-border-card">
                 <p class="about-card-label">Email</p>
                 <p class="about-card-value"><a href="mailto:mukund.rs.2001@gmail.com">mukund.rs.2001@gmail.com</a></p>
               </div>
-              <div class="about-card animate-on-scroll">
+              <div class="about-card animate-on-scroll animated-border-card">
                 <p class="about-card-label">Interests</p>
                 <p class="about-card-value">Traveling, Reading, Music, Biking</p>
               </div>
@@ -340,7 +351,7 @@
         </div>
 
         <div class="education-grid">
-          <div class="education-card animate-on-scroll">
+          <div class="education-card animate-on-scroll animated-border-card">
             <h3 class="education-institution">Sri Sairam Institute of Technology</h3>
             <p class="education-degree">B.E. in Computer Science &amp; Engineering</p>
             <div class="education-meta">
@@ -348,7 +359,7 @@
               <span class="gpa">GPA: 8.09</span>
             </div>
           </div>
-          <div class="education-card animate-on-scroll">
+          <div class="education-card animate-on-scroll animated-border-card">
             <h3 class="education-institution">P.S. Senior Secondary School</h3>
             <p class="education-degree">Senior Secondary (XII)</p>
             <div class="education-meta">
@@ -370,7 +381,7 @@
 
         <div class="certifications-grid">
           <!-- Cert 1 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
               <h3 class="cert-title">Use AI as a Creative or Expert Partner</h3>
@@ -382,7 +393,7 @@
             </div>
           </div>
           <!-- Cert 2 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
               <h3 class="cert-title">Design Prompts for Everyday Work Tasks</h3>
@@ -394,7 +405,7 @@
             </div>
           </div>
           <!-- Cert 3 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
               <h3 class="cert-title">Start Writing Prompts like a Pro</h3>
@@ -406,7 +417,7 @@
             </div>
           </div>
           <!-- Cert 4 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
               <h3 class="cert-title">Foundations of Cybersecurity</h3>
@@ -418,7 +429,7 @@
             </div>
           </div>
           <!-- Cert 5 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">e-CARGOWARE Ltd</div>
               <h3 class="cert-title">Certificate of achievement</h3>
@@ -429,7 +440,7 @@
             </div>
           </div>
           <!-- Cert 6 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google (Coursera)</div>
               <h3 class="cert-title">Foundations of Data Science</h3>
@@ -441,7 +452,7 @@
             </div>
           </div>
           <!-- Cert 7 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">ICT Academy</div>
               <h3 class="cert-title">IBM Nalaiya Thiran Project Certificate</h3>
@@ -453,7 +464,7 @@
             </div>
           </div>
           <!-- Cert 8 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Udemy</div>
               <h3 class="cert-title">Responsive Web Design: HTML5 + CSS3</h3>
@@ -464,7 +475,7 @@
             </div>
           </div>
           <!-- Cert 9 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Udemy</div>
               <h3 class="cert-title">Build a Backend REST API with Python &amp; Django</h3>
@@ -476,7 +487,7 @@
             </div>
           </div>
           <!-- Cert 10 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Udemy</div>
               <h3 class="cert-title">Python Django Dev To Deployment</h3>
@@ -488,7 +499,7 @@
             </div>
           </div>
           <!-- Cert 11 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">HCL GUVI</div>
               <h3 class="cert-title">Modern HTML &amp; CSS</h3>
@@ -500,7 +511,7 @@
             </div>
           </div>
           <!-- Cert 12 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Forage</div>
               <h3 class="cert-title">Accenture Nordic Developer Program</h3>
@@ -511,7 +522,7 @@
             </div>
           </div>
           <!-- Cert 13 -->
-          <div class="cert-card animate-on-scroll">
+          <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Forage</div>
               <h3 class="cert-title">JPMorgan Chase Software Engineering</h3>
@@ -536,7 +547,7 @@
 
         <div class="achievements-grid">
           <!-- Award 1 -->
-          <div class="achievement-card animate-on-scroll">
+          <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🏆</div>
             <div class="achievement-info">
               <p class="achievement-date">Aug 2022</p>
@@ -546,7 +557,7 @@
           </div>
 
           <!-- Award 2 -->
-          <div class="achievement-card animate-on-scroll">
+          <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">⭐</div>
             <div class="achievement-info">
               <p class="achievement-date">Oct 2021</p>
@@ -556,7 +567,7 @@
           </div>
 
           <!-- Award 3 -->
-          <div class="achievement-card animate-on-scroll">
+          <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🥉</div>
             <div class="achievement-info">
               <p class="achievement-date">Apr 2021</p>
@@ -566,7 +577,7 @@
           </div>
 
           <!-- Award 4 -->
-          <div class="achievement-card animate-on-scroll">
+          <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🏅</div>
             <div class="achievement-info">
               <p class="achievement-date">Nov 2020</p>
@@ -576,7 +587,7 @@
           </div>
 
           <!-- Award 5 -->
-          <div class="achievement-card animate-on-scroll">
+          <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🎓</div>
             <div class="achievement-info">
               <p class="achievement-date">Aug 2019</p>
@@ -598,7 +609,7 @@
 
         <div class="leadership-grid">
           <!-- Item 1 -->
-          <div class="leadership-card animate-on-scroll">
+          <div class="leadership-card animate-on-scroll animated-border-card">
             <div>
               <p class="leadership-date">Sep 2022 — Present</p>
               <h3 class="leadership-title">Nutpam 2K22</h3>
@@ -608,7 +619,7 @@
           </div>
 
           <!-- Item 2 -->
-          <div class="leadership-card animate-on-scroll">
+          <div class="leadership-card animate-on-scroll animated-border-card">
             <div>
               <p class="leadership-date">Sep 2022 — Present</p>
               <h3 class="leadership-title">TEDxSriSairamIT</h3>
@@ -618,7 +629,7 @@
           </div>
 
           <!-- Item 3 -->
-          <div class="leadership-card animate-on-scroll">
+          <div class="leadership-card animate-on-scroll animated-border-card">
             <div>
               <p class="leadership-date">Aug 2021 — Jul 2022</p>
               <h3 class="leadership-title">Google DSC Sri Sairam</h3>

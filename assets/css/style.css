@@ -23,7 +23,8 @@
   --accent: #6366f1;
   --accent-hover: #818cf8;
   --accent-subtle: rgba(99, 102, 241, 0.1);
-  --accent-glow: rgba(99, 102, 241, 0.15);
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --card-hover-shadow: 0 16px 36px -12px rgba(99, 102, 241, 0.4);
 
   /* Borders */
   --border: rgba(255, 255, 255, 0.06);
@@ -62,11 +63,14 @@
   --text-secondary: #4b5563;
   --text-muted: #9ca3af;
 
+  /* Accent */
   --accent: #4f46e5;
   --accent-hover: #6366f1;
   --accent-subtle: rgba(79, 70, 229, 0.07);
-  --accent-glow: rgba(79, 70, 229, 0.1);
+  --accent-glow: rgba(79, 70, 229, 0.15);
+  --card-hover-shadow: 0 16px 36px -12px rgba(79, 70, 229, 0.25);
 
+  /* Borders */
   --border: rgba(0, 0, 0, 0.07);
   --border-hover: rgba(0, 0, 0, 0.12);
 
@@ -216,6 +220,16 @@ section {
 /* ----------------------------------------------------------------
    5. Navigation
    ---------------------------------------------------------------- */
+.scroll-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  width: 0%;
+  z-index: 1001;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -486,6 +500,7 @@ section {
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1;
 }
 
 .hero-image-wrapper {
@@ -497,6 +512,7 @@ section {
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  z-index: 2;
 }
 
 .hero-image-wrapper:hover {
@@ -564,15 +580,20 @@ section {
 
 .hero-glow {
   position: absolute;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 75%);
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(80px);
   z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 30%;
+  left: 40%;
+  animation: float-glow 10s ease-in-out infinite alternate;
+}
+
+@keyframes float-glow {
+  0% { transform: translate(-10%, -10%) scale(1); }
+  100% { transform: translate(15%, 15%) scale(1.1); }
 }
 
 /* ----------------------------------------------------------------
@@ -661,9 +682,10 @@ section {
 }
 
 .about-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent);
   background: var(--bg-card-hover);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow);
 }
 
 .about-card-label {
@@ -833,10 +855,10 @@ section {
 }
 
 .education-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent);
   background: var(--bg-card-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--card-hover-shadow);
 }
 
 .education-institution {
@@ -953,10 +975,10 @@ section {
 }
 
 .cert-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent);
   background: var(--bg-card-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow);
 }
 
 .cert-title {
@@ -1018,10 +1040,10 @@ section {
 }
 
 .leadership-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent);
   background: var(--bg-card-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--card-hover-shadow);
 }
 
 .leadership-title {
@@ -1329,4 +1351,134 @@ section {
   h1 { font-size: 2.2rem; }
   .hero-cta { flex-direction: column; width: 100%; }
   .hero-cta .btn { width: 100%; justify-content: center; }
+}
+
+/* ----------------------------------------------------------------
+   18. Parallax Background Orbs
+   ---------------------------------------------------------------- */
+.bg-orbs-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  mix-blend-mode: plus-lighter;
+  transition: background-color 0.4s ease;
+  will-change: transform;
+}
+
+[data-theme="dark"] .bg-orb-1 {
+  background: var(--accent);
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  right: -10%;
+}
+[data-theme="dark"] .bg-orb-2 {
+  background: #a78bfa;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: -10%;
+}
+[data-theme="dark"] .bg-orb-3 {
+  background: var(--accent);
+  width: 450px;
+  height: 450px;
+  bottom: -10%;
+  right: 20%;
+}
+
+[data-theme="light"] .bg-orb {
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  filter: blur(140px);
+}
+[data-theme="light"] .bg-orb-1 {
+  background: var(--accent);
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  right: -10%;
+}
+[data-theme="light"] .bg-orb-2 {
+  background: #c084fc;
+  width: 400px;
+  height: 400px;
+  top: 55%;
+  left: -10%;
+}
+[data-theme="light"] .bg-orb-3 {
+  background: var(--accent);
+  width: 450px;
+  height: 450px;
+  bottom: -10%;
+  right: 20%;
+}
+
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------------
+   19. Futuristic Animated Borders
+   ---------------------------------------------------------------- */
+.animated-border-card {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.animated-border-card::before {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, transparent 75%, var(--accent) 100%);
+  animation: spin-border 3.5s linear infinite;
+  z-index: -2;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.animated-border-card:hover::before {
+  opacity: 1;
+}
+
+.animated-border-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-card);
+  border-radius: inherit;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.animated-border-card:hover::after {
+  background: var(--bg-card-hover);
+}
+
+.animated-border-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

@@ -48,7 +48,25 @@
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-links a');
 
+  const scrollProgressBar = document.getElementById('scrollProgress');
+  const orb1 = document.getElementById('orb1');
+  const orb2 = document.getElementById('orb2');
+  const orb3 = document.getElementById('orb3');
+
   function updateActiveNav() {
+    // Calculate scroll progress percentage
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (scrollProgressBar) {
+      scrollProgressBar.style.width = scrollPercent + '%';
+    }
+
+    // Parallax translation for background glowing orbs
+    if (orb1) orb1.style.transform = `translate3d(0, ${scrollTop * 0.12}px, 0)`;
+    if (orb2) orb2.style.transform = `translate3d(0, ${-scrollTop * 0.08}px, 0)`;
+    if (orb3) orb3.style.transform = `translate3d(0, ${scrollTop * 0.04}px, 0)`;
+
     const scrollPos = window.scrollY + window.innerHeight / 3;
 
     let currentSection = '';
@@ -96,6 +114,504 @@
   } else {
     // Fallback: show everything immediately
     animateElements.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // ----------------------------------------------------------------
+  // 5. Interactive Background Canvas (Advanced Neural Data Stream)
+  // ----------------------------------------------------------------
+  const canvas = document.getElementById('bgCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    let mouse = { x: -1000, y: -1000 };
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      init();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    });
+    
+    function triggerBurst(cx, cy, color) {
+      shockwaves.push(new Shockwave(cx, cy, color));
+      nodes.forEach(n => {
+        const dx = n.x - cx;
+        const dy = n.y - cy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 400) {
+          const force = (400 - dist) / 400;
+          n.vx += (dx / dist) * force * 20;
+          n.vy += (dy / dist) * force * 20;
+        }
+      });
+      nodes.forEach(n => {
+        const dx = n.x - cx;
+        const dy = n.y - cy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 250) {
+           pulses.push(new Pulse({x: cx, y: cy}, n, Math.random() * 0.04 + 0.03, color));
+        }
+      });
+    }
+
+    window.addEventListener('click', (e) => {
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const color = theme === 'dark' ? '#00e5ff' : '#4f46e5';
+      triggerBurst(e.clientX, e.clientY, color);
+    });
+
+    let nodes = [];
+    let pulses = [];
+    let shockwaves = [];
+    let trucks = [];
+    let flights = [];
+    const nodeCount = Math.min(Math.floor((width * height) / 10000), 120);
+
+    // Logistics Entities
+    class Truck {
+      constructor(roadY, direction) {
+        this.roadY = roadY;
+        this.direction = direction; // 1 for right, -1 for left
+        this.x = direction === 1 ? -100 : width + 100;
+        this.y = roadY;
+        this.speed = Math.random() * 1 + 1.5;
+      }
+      update() {
+        this.x += this.speed * this.direction;
+      }
+      draw(ctx, color) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.scale(this.direction * 1.8, 1.8);
+        
+        ctx.beginPath();
+        // Trailer
+        ctx.rect(-20, -15, 30, 15);
+        // Cab 
+        ctx.moveTo(10, -5); 
+        ctx.lineTo(10, -12);
+        ctx.lineTo(16, -12);
+        ctx.lineTo(20, -5);
+        ctx.lineTo(23, -5);
+        ctx.lineTo(24, -2);
+        ctx.lineTo(24, 0);
+        ctx.lineTo(10, 0);
+        
+        // Wheels
+        ctx.moveTo(-10 + 3, 0); ctx.arc(-10, 0, 3, 0, Math.PI * 2);
+        ctx.moveTo(-2 + 3, 0); ctx.arc(-2, 0, 3, 0, Math.PI * 2);
+        ctx.moveTo(18 + 3, 0); ctx.arc(18, 0, 3, 0, Math.PI * 2);
+        
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.2;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = color;
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    class Flight {
+      constructor() {
+        this.directionX = Math.random() > 0.5 ? 1 : -1;
+        this.directionY = (Math.random() - 0.5) * 0.5; // slight diagonal
+        this.x = this.directionX === 1 ? -100 : width + 100;
+        this.y = Math.random() * height;
+        this.speed = Math.random() * 2 + 2;
+        this.size = 20;
+      }
+      update(scrollDiff) {
+        this.x += this.speed * this.directionX;
+        this.y += (this.speed * this.directionY) - (scrollDiff * 0.15);
+      }
+      draw(ctx, color) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        const angle = Math.atan2(this.directionY, this.directionX);
+        ctx.rotate(angle);
+        ctx.scale(1.5, 1.5);
+        
+        ctx.beginPath();
+        // Fuselage
+        ctx.moveTo(15, 0);
+        ctx.lineTo(10, 2.5);
+        ctx.lineTo(-12, 2.5);
+        ctx.lineTo(-15, 0);
+        ctx.lineTo(-12, -2.5);
+        ctx.lineTo(10, -2.5);
+        ctx.closePath();
+
+        // Right Wing
+        ctx.moveTo(2, 2.5);
+        ctx.lineTo(-5, 16);
+        ctx.lineTo(-2, 16); 
+        ctx.lineTo(6, 2.5);
+
+        // Left Wing
+        ctx.moveTo(2, -2.5);
+        ctx.lineTo(-5, -16);
+        ctx.lineTo(-2, -16);
+        ctx.lineTo(6, -2.5);
+
+        // Tail Wings
+        ctx.moveTo(-10, 2);
+        ctx.lineTo(-14, 7);
+        ctx.lineTo(-12, 2);
+
+        ctx.moveTo(-10, -2);
+        ctx.lineTo(-14, -7);
+        ctx.lineTo(-12, -2);
+        
+        // Vertical Stabilizer
+        ctx.moveTo(-12, 0);
+        ctx.lineTo(-16, 0);
+        
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = color;
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    // Network Entities
+    class Shockwave {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = 0;
+        this.color = color;
+        this.opacity = 1;
+      }
+      update() {
+        this.radius += 10;
+        this.opacity -= 0.02;
+      }
+      draw(ctx) {
+        if (this.opacity <= 0) return;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.globalAlpha = 1.0;
+      }
+    }
+
+    class Node {
+      constructor(id) {
+        this.id = id;
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 1.5 + 0.5;
+        this.connections = [];
+      }
+      
+      update() {
+        this.vx *= 0.94;
+        this.vy *= 0.94;
+        const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        if (speed < 0.3) {
+          this.vx += (Math.random() - 0.5) * 0.1;
+          this.vy += (Math.random() - 0.5) * 0.1;
+        }
+
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        if (this.x < 0) { this.x = 0; this.vx *= -1; }
+        if (this.x > width) { this.x = width; this.vx *= -1; }
+        if (this.y < 0) { this.y = 0; this.vy *= -1; }
+        if (this.y > height) { this.y = height; this.vy *= -1; }
+      }
+      
+      draw(ctx, color) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
+    }
+
+    class Pulse {
+      constructor(startNode, endNode, speed, color) {
+        this.start = startNode;
+        this.end = endNode;
+        this.progress = 0;
+        this.speed = speed;
+        this.color = color;
+      }
+      update() { this.progress += this.speed; }
+      draw(ctx) {
+        const x = this.start.x + (this.end.x - this.start.x) * this.progress;
+        const y = this.start.y + (this.end.y - this.start.y) * this.progress;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        
+        const trailLength = 0.15;
+        const trailStartProgress = Math.max(0, this.progress - trailLength);
+        const startX = this.start.x + (this.end.x - this.start.x) * trailStartProgress;
+        const startY = this.start.y + (this.end.y - this.start.y) * trailStartProgress;
+        
+        const gradient = ctx.createLinearGradient(startX, startY, x, y);
+        gradient.addColorStop(0, 'rgba(0,0,0,0)');
+        gradient.addColorStop(1, this.color);
+
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+      }
+    }
+
+    function init() {
+      nodes = [];
+      pulses = [];
+      shockwaves = [];
+      trucks = [];
+      flights = [];
+      for (let i = 0; i < nodeCount; i++) {
+        nodes.push(new Node(i));
+      }
+    }
+
+    init();
+    let lastScrollY = window.scrollY;
+    let time = 0;
+    const sections = Array.from(document.querySelectorAll('section'));
+
+    function checkCollisions(themeColor) {
+        // Flight vs Flight
+        for (let i = 0; i < flights.length; i++) {
+            for (let j = i + 1; j < flights.length; j++) {
+                const f1 = flights[i];
+                const f2 = flights[j];
+                const dx = f1.x - f2.x;
+                const dy = f1.y - f2.y;
+                if (Math.sqrt(dx*dx + dy*dy) < 30) {
+                    triggerBurst(f1.x, f1.y, themeColor);
+                    flights.splice(j, 1);
+                    flights.splice(i, 1);
+                    return;
+                }
+            }
+            
+            // Flight vs Trucks
+            for (let t = 0; t < trucks.length; t++) {
+                const tr = trucks[t];
+                const dx = flights[i].x - tr.x;
+                const dy = flights[i].y - tr.y;
+                if (Math.sqrt(dx*dx + dy*dy) < 40) {
+                    triggerBurst(tr.x, tr.y, themeColor);
+                    trucks.splice(t, 1);
+                    flights.splice(i, 1);
+                    return;
+                }
+            }
+            
+            // Entity vs Mouse (Interactive Burst)
+            if (mouse.x !== -1000) {
+                const mdx = flights[i].x - mouse.x;
+                const mdy = flights[i].y - mouse.y;
+                if (Math.sqrt(mdx*mdx + mdy*mdy) < 30) {
+                    triggerBurst(flights[i].x, flights[i].y, themeColor);
+                    flights.splice(i, 1);
+                    return;
+                }
+            }
+        }
+        
+        // Truck vs Mouse
+        if (mouse.x !== -1000) {
+            for (let t = 0; t < trucks.length; t++) {
+                const mdx = trucks[t].x - mouse.x;
+                const mdy = trucks[t].y - mouse.y;
+                if (Math.sqrt(mdx*mdx + mdy*mdy) < 30) {
+                    triggerBurst(trucks[t].x, trucks[t].y, themeColor);
+                    trucks.splice(t, 1);
+                    return;
+                }
+            }
+        }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const isDark = theme === 'dark';
+      
+      const nodeColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.3)';
+      const lineBase = isDark ? '99, 102, 241' : '79, 70, 229';
+      const pulseColor = isDark ? '#00e5ff' : '#4f46e5';
+      const logisticsColor = isDark ? 'rgba(56, 189, 248, 0.8)' : 'rgba(2, 132, 199, 0.8)'; // Cyan/Blue
+
+      const currentScrollY = window.scrollY;
+      const scrollDiff = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
+      time += 0.02;
+
+      // Spawn Flights (Rare Easter Egg)
+      if (Math.random() < 0.003 && flights.length < 3) {
+          flights.push(new Flight());
+      }
+      
+      // Spawn Trucks on Visible Section Roads
+      sections.forEach(sec => {
+          // Optimized: Only check bounds occasionally or use simplified math
+          const roadY = sec.offsetTop + sec.offsetHeight - currentScrollY;
+          if (roadY > 50 && roadY < height - 50) {
+              if (Math.random() < 0.002 && trucks.length < 3) {
+                  trucks.push(new Truck(roadY, Math.random() > 0.5 ? 1 : -1));
+              }
+          }
+      });
+
+      // Update & Draw Logistics
+      for (let i = trucks.length - 1; i >= 0; i--) {
+          trucks[i].y -= scrollDiff; // Map truck to document scroll
+          trucks[i].update();
+          trucks[i].draw(ctx, logisticsColor);
+          if (trucks[i].x < -200 || trucks[i].x > width + 200) trucks.splice(i, 1);
+      }
+      
+      for (let i = flights.length - 1; i >= 0; i--) {
+          flights[i].update(scrollDiff);
+          flights[i].draw(ctx, logisticsColor);
+          if (flights[i].x < -200 || flights[i].x > width + 200) flights.splice(i, 1);
+      }
+
+      checkCollisions(pulseColor);
+
+      // Update nodes
+      nodes.forEach(n => {
+        n.y -= scrollDiff * 0.15; // Parallax
+        if (n.y > height) n.y = 0;
+        if (n.y < 0) n.y = height;
+        n.update();
+        n.connections = [];
+      });
+
+      // Draw connections & generate pulses
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const distSq = dx * dx + dy * dy; // Optimized: removed Math.sqrt
+
+          if (distSq < 16900) { // 130 squared
+            nodes[i].connections.push(nodes[j]);
+            nodes[j].connections.push(nodes[i]);
+
+            const dist = Math.sqrt(distSq); // Only calculate if needed for rendering
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${lineBase}, ${0.25 * (1 - dist / 130)})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+
+            if (Math.random() < 0.001) {
+              pulses.push(new Pulse(nodes[i], nodes[j], Math.random() * 0.015 + 0.015, pulseColor));
+            }
+          }
+        }
+      }
+
+      // Mouse interaction
+      const mouseActive = mouse.x !== -1000;
+      if (mouseActive) {
+        ctx.save();
+        ctx.translate(mouse.x, mouse.y);
+        ctx.rotate(time);
+        ctx.beginPath();
+        ctx.arc(0, 0, 25, 0, Math.PI * 1.5);
+        ctx.strokeStyle = `rgba(${lineBase}, 0.8)`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        
+        ctx.rotate(-time * 1.5);
+        ctx.beginPath();
+        ctx.arc(0, 0, 35, 0, Math.PI * 1.2);
+        ctx.strokeStyle = pulseColor;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(-4, 0); ctx.lineTo(4, 0);
+        ctx.moveTo(0, -4); ctx.lineTo(0, 4);
+        ctx.strokeStyle = pulseColor;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.restore();
+
+        nodes.forEach(n => {
+          const dx = n.x - mouse.x;
+          const dy = n.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < 220) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${lineBase}, ${0.5 * (1 - dist / 220)})`;
+            ctx.lineWidth = 1.2;
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+
+            n.x -= dx * 0.02;
+            n.y -= dy * 0.02;
+
+            if (Math.random() < 0.015) {
+              pulses.push(new Pulse(n, mouse, Math.random() * 0.03 + 0.03, pulseColor));
+            }
+          }
+        });
+      }
+
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        pulses[i].update();
+        pulses[i].draw(ctx);
+        if (pulses[i].progress >= 1) {
+          pulses.splice(i, 1);
+        }
+      }
+
+      for (let i = shockwaves.length - 1; i >= 0; i--) {
+        shockwaves[i].update();
+        shockwaves[i].draw(ctx);
+        if (shockwaves[i].opacity <= 0) {
+          shockwaves.splice(i, 1);
+        }
+      }
+
+      nodes.forEach(n => n.draw(ctx, nodeColor));
+
+      requestAnimationFrame(draw);
+    }
+    draw();
   }
 
 })();
