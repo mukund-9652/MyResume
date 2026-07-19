@@ -7,6 +7,44 @@
   'use strict';
 
   // ----------------------------------------------------------------
+  // 0. Language Detection & Routing
+  // ----------------------------------------------------------------
+  const path = window.location.pathname;
+  const currentPage = path.endsWith('/') ? 'index.html' : (path.split('/').pop() || 'index.html');
+  const savedLang = localStorage.getItem('mukund-lang');
+
+  if (!savedLang) {
+    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    let targetPage = 'index.html';
+
+    if (browserLang.startsWith('de')) {
+      targetPage = 'index_de.html';
+    } else if (browserLang.startsWith('it')) {
+      targetPage = 'index_it.html';
+    }
+
+    if (targetPage !== currentPage && !(currentPage === 'index.html' && targetPage === 'index.html')) {
+      const detectedLang = targetPage === 'index_de.html' ? 'de' : (targetPage === 'index_it.html' ? 'it' : 'en');
+      localStorage.setItem('mukund-lang', detectedLang);
+      window.location.href = targetPage;
+    }
+  }
+
+  // Bind event listeners to language switcher links to persist choices
+  document.addEventListener('DOMContentLoaded', () => {
+    const langLinks = document.querySelectorAll('.lang-dropdown a');
+    langLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href') || '';
+        let chosenLang = 'en';
+        if (href.includes('_de')) chosenLang = 'de';
+        else if (href.includes('_it')) chosenLang = 'it';
+        localStorage.setItem('mukund-lang', chosenLang);
+      });
+    });
+  });
+
+  // ----------------------------------------------------------------
   // 1. Theme Toggle (Dark / Light)
   // ----------------------------------------------------------------
   const themeToggle = document.getElementById('themeToggle');

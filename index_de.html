@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="de" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Title MUST be near the top for WhatsApp and some scrapers -->
-  <title>Mukund R S | Full-Stack Software Engineer</title>
+  <title>Mukund R S | Full-Stack-Softwareentwickler</title>
 
   <meta name="author" content="Mukund R S">
   <meta name="description"
-    content="Mukund R S — Advanced Full-Stack Software Engineer specializing in Java, Spring Boot, Angular, TypeScript, PostgreSQL, and AWS. Building scalable, secure enterprise applications.">
+    content="Mukund R S — Erfahrener Full-Stack-Softwareentwickler spezialisiert auf Java, Spring Boot, Angular, TypeScript, PostgreSQL und AWS. Aufbau skalierbarer und sicherer Unternehmensanwendungen.">
   <meta name="keywords"
-    content="Mukund R S, Mukund Ravi Sankaran, Advanced Full-Stack Engineer, Software Engineer, Java Developer, Spring Boot, Angular, TypeScript, PostgreSQL, AWS, Hibernate, REST API, DevSecOps">
+    content="Mukund R S, Mukund Ravi Sankaran, Softwareentwickler, Java Entwickler, Spring Boot, Angular, TypeScript, PostgreSQL, AWS, AppSec, DevSecOps">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mukund R S — Advanced Full-Stack Software Engineer">
+  <meta property="og:title" content="Mukund R S — Erfahrener Full-Stack-Softwareentwickler">
   <meta property="og:description"
-    content="Architecting scalable backend systems with Java & Spring Boot, building responsive frontends with Angular & TypeScript.">
-  <!-- MUST be an absolute URL for WhatsApp to render the image -->
+    content="Architektur skalierbarer Backend-Systeme mit Java & Spring Boot, Entwicklung flüssiger Frontends mit Angular & TypeScript.">
   <meta property="og:image" itemprop="image" content="https://mukundrs.netlify.app/assets/img/hero/hero_1.png">
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
@@ -27,10 +25,10 @@
   <meta property="og:url" content="https://mukundrs.netlify.app/">
   <meta property="og:site_name" content="Mukund R S">
 
-  <!-- Twitter Card (Used as a fallback by many messengers) -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mukund R S — Advanced Full-Stack Software Engineer">
-  <meta name="twitter:description" content="Architecting scalable backend systems with Java & Spring Boot, building responsive frontends with Angular & TypeScript.">
+  <meta name="twitter:title" content="Mukund R S — Erfahrener Full-Stack-Softwareentwickler">
+  <meta name="twitter:description" content="Architektur skalierbarer Backend-Systeme mit Java & Spring Boot, Entwicklung flüssiger Frontends mit Angular & TypeScript.">
   <meta name="twitter:image" content="https://mukundrs.netlify.app/assets/img/hero/hero_1.png">
 
   <!-- Favicon -->
@@ -57,9 +55,7 @@
   <!-- Interactive Canvas Background Grid -->
   <canvas class="bg-canvas" id="bgCanvas"></canvas>
 
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
+  <!-- NAVIGATION -->
   <header class="navbar" id="navbar">
     <div class="scroll-progress-bar" id="scrollProgress"></div>
     <div class="container">
@@ -67,44 +63,40 @@
 
       <nav>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#achievements">Awards</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#hero" class="active">Startseite</a></li>
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#experience">Erfahrung</a></li>
+          <li><a href="#skills">Fähigkeiten</a></li>
+          <li><a href="#certifications">Zertifikate</a></li>
+          <li><a href="#achievements">Erfolge</a></li>
+          <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <!-- Language Switcher -->
         <div class="lang-selector">
-          <button class="lang-btn" aria-label="Select Language">
-            EN <span class="arrow">▼</span>
+          <button class="lang-btn" aria-label="Sprache auswählen">
+            DE <span class="arrow">▼</span>
           </button>
           <ul class="lang-dropdown">
-            <li><a href="index.html" class="active">English</a></li>
-            <li><a href="index_de.html">Deutsch</a></li>
+            <li><a href="index.html">English</a></li>
+            <li><a href="index_de.html" class="active">Deutsch</a></li>
             <li><a href="index_it.html">Italiano</a></li>
           </ul>
         </div>
 
-        <button class="aesthetics-toggle" id="aestheticsToggle" aria-label="Toggle Minimal Mode" title="Toggle Minimal UI">
-          <!-- Sparkle icon (shown in Minimal Mode — click to enable animations) -->
+        <button class="aesthetics-toggle" id="aestheticsToggle" aria-label="Minimal-Modus umschalten" title="Minimal-Modus umschalten">
           <svg class="icon-advanced" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"></path>
             <path d="M19 13l.75 2.25L22 16l-2.25.75L19 19l-.75-2.25L16 16l2.25-.75L19 13z"></path>
           </svg>
-          <!-- Command icon (shown in Advanced Mode — click to go minimal) -->
           <svg class="icon-minimal" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
             <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
           </svg>
         </button>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
-          <!-- Sun icon (shown in light mode) -->
-          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button class="theme-toggle" id="themeToggle" aria-label="Theme umschalten" title="Theme umschalten">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -115,22 +107,17 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <!-- Moon icon (shown in dark mode) -->
-          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menü umschalten">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ============================================================
-       MAIN CONTENT
-       ============================================================ -->
   <main>
 
     <!-- HERO -->
@@ -138,36 +125,30 @@
       <div class="hero-grid-bg"></div>
       <div class="container">
         <div class="hero-content">
-          <!-- Status Badge -->
           <div class="status-badge animate-on-scroll">
             <span class="status-dot"></span>
-            Open to opportunities
+            Offen für neue Herausforderungen
           </div>
-          <p class="hero-greeting">Hi, I'm</p>
+          <p class="hero-greeting">Hallo, ich bin</p>
           <h1 class="hero-name"><span>Mukund R S</span></h1>
-          <p class="hero-title">Advanced Full-Stack Software Engineer</p>
-          <p class="hero-bio">I am a full-stack software engineer dedicated to building and scaling resilient digital solutions. I focus on clean architecture, secure engineering practices, and solving complex enterprise problems. <a href="#skills" class="skills-jump-link">Explore my skills &rarr;</a></p>
+          <p class="hero-title">Erfahrener Full-Stack-Softwareentwickler</p>
+          <p class="hero-bio">Ich bin Full-Stack-Softwareentwickler und widme mich dem Aufbau und der Skalierung robuster digitaler Lösungen. Mein Fokus liegt auf sauberer Architektur, sicheren Entwicklungspraktiken und der Lösung komplexer Unternehmensprobleme. <a href="#skills" class="skills-jump-link">Fähigkeiten erkunden &rarr;</a></p>
 
           <div class="hero-socials">
             <a href="https://github.com/mukund-9652" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
               </svg>
             </a>
             <a href="https://www.linkedin.com/in/mukundrs/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
-            <a href="mailto:mukund.rs.2001@gmail.com" aria-label="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+            <a href="mailto:mukund.rs.2001@gmail.com" aria-label="E-Mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
@@ -176,22 +157,20 @@
 
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
               </svg>
-              Request Resume
+              Lebenslauf anfordern
             </a>
-            <a href="#about" class="btn btn-outline">Learn More</a>
+            <a href="#about" class="btn btn-outline">Mehr erfahren</a>
           </div>
         </div>
 
         <div class="hero-image">
           <div class="hero-glow"></div>
           <div class="hero-image-wrapper">
-            <img id="heroImage" src="assets/img/mukund-light-coat.png" alt="Mukund R S — Software Engineer">
-            <!-- Floating Badge -->
+            <img id="heroImage" src="assets/img/mukund-dark-coat.png" alt="Mukund R S — Softwareentwickler">
             <div class="floating-badge">
               <span class="badge-icon">⚡</span>
               <div class="badge-text">
@@ -208,13 +187,12 @@
     <section class="section-alt" id="about">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">About</span>
-          <h2>Building resilient software that solves complex problems</h2>
+          <span class="section-label">Über mich</span>
+          <h2>Robuste Software entwickeln, die komplexe Probleme löst</h2>
         </div>
 
         <div class="about-grid">
           <div class="about-3d-container animate-on-scroll" id="about3DContainer">
-            <!-- Static fallback grid for Minimal Mode -->
             <div class="about-skills-static">
               <span class="static-skill">☕ Java</span>
               <span class="static-skill">🍃 Spring Boot</span>
@@ -226,28 +204,27 @@
               <span class="static-skill">☁️ AWS</span>
               <span class="static-skill">🐳 Docker</span>
             </div>
-            <!-- Three.js Canvas will be injected here -->
           </div>
           <div>
             <p class="animate-on-scroll" style="margin-bottom: 32px; font-size: 1.05rem; line-height: 1.85;">
-              I am an advanced full-stack engineer focused on crafting robust, scalable digital ecosystems. My experience spans architecting high-performance enterprise backends, engineering fluid user interfaces, and optimizing critical database infrastructures. Currently, I engineer mission-critical logistics software at e-Cargoware, delivering reliable solutions that power global freight operations for international clients.
+              Ich bin ein erfahrener Full-Stack-Entwickler, der sich auf die Entwicklung robuster, skalierbarer digitaler Ökosysteme konzentriert. Meine Erfahrung umfasst die Konzeption von hochperformanten Enterprise-Backends, die Entwicklung flüssiger Benutzeroberflächen und die Optimierung kritischer Datenbankinfrastrukturen. Derzeit entwickle ich geschäftskritische Logistiksoftware bei e-Cargoware, um zuverlässige Lösungen bereitzustellen, die den weltweiten Frachtbetrieb für internationale Kunden unterstützen.
             </p>
             <div class="about-details-grid">
               <div class="about-card animate-on-scroll animated-border-card">
-                <p class="about-card-label">Location</p>
-                <p class="about-card-value">Chennai, India</p>
+                <p class="about-card-label">Standort</p>
+                <p class="about-card-value">Chennai, Indien</p>
               </div>
               <div class="about-card animate-on-scroll animated-border-card">
-                <p class="about-card-label">Education</p>
-                <p class="about-card-value">B.E. in Computer Science</p>
+                <p class="about-card-label">Ausbildung</p>
+                <p class="about-card-value">B.E. in Informatik</p>
               </div>
               <div class="about-card animate-on-scroll animated-border-card">
-                <p class="about-card-label">Email</p>
+                <p class="about-card-label">E-Mail</p>
                 <p class="about-card-value"><a href="mailto:mukund.rs.2001@gmail.com">mukund.rs.2001@gmail.com</a></p>
               </div>
               <div class="about-card animate-on-scroll animated-border-card">
-                <p class="about-card-label">Interests</p>
-                <p class="about-card-value">Traveling, Reading, Music, Biking</p>
+                <p class="about-card-label">Interessen</p>
+                <p class="about-card-value">Reisen, Lesen, Musik, Radfahren</p>
               </div>
             </div>
           </div>
@@ -259,62 +236,62 @@
     <section id="experience">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Experience</span>
-          <h2>Where I've worked</h2>
+          <span class="section-label">Erfahrung</span>
+          <h2>Beruflicher Werdegang</h2>
         </div>
 
         <div class="timeline">
           <!-- e-Cargoware -->
           <div class="timeline-item animate-on-scroll">
-            <p class="timeline-company">e-Cargoware (Chennai, India)</p>
+            <p class="timeline-company">e-Cargoware (Chennai, Indien)</p>
             <h3 class="timeline-role">Full Stack Developer, Software Engineer</h3>
-            <p class="timeline-date">Aug 2023 — Present</p>
+            <p class="timeline-date">Aug. 2023 — Heute</p>
             <ul class="timeline-details">
-              <li>Enhanced FR8Manage (AngularJS) by building new controllers, services, and shared Spring Boot REST controllers, used by 20+ customers to streamline workflows. Updated components and functionality in FR8Booking (Angular 16), supporting deployment for 5 major clients. Optimized system performance and data integration using Java, Spring Boot, and database migrations to support logistics and booking operations.</li>
-              <li>Leveraged existing Flutter InAppWebView and flavours concepts in FR8Booking’s mobile app to build and deploy around 10 APKs for local client usage, and successfully published the app on Google Play Store and Apple App Store for 3 major clients, ensuring a reliable and user-friendly mobile experience.</li>
-              <li>Managed and fulfilled product requirement requests from two airline clients, leading to the successful deployment of the upgraded application to over 50 agents from their customer base. This process involved customizing features to meet client needs, enhancing user experience, and ensuring efficient and effective application performance across the client's operations.</li>
+              <li>Erweiterung von FR8Manage (AngularJS) durch Entwicklung neuer Controller, Services und gemeinsamer Spring-Boot-REST-Controller, die von über 20 Kunden zur Rationalisierung von Arbeitsabläufen genutzt werden. Aktualisierung von Komponenten und Funktionalitäten in FR8Booking (Angular 16) für 5 Großkunden. Optimierung der Systemleistung und Datenintegration mittels Java, Spring Boot und Datenbankmigrationen zur Unterstützung des Logistik- und Buchungsbetriebs.</li>
+              <li>Nutzung bestehender Flutter InAppWebView- und Flavors-Konzepte in der mobilen FR8Booking-App, um rund 10 APKs für die lokale Kundennutzung bereitzustellen, und erfolgreiche Veröffentlichung der App im Google Play Store und Apple App Store für 3 Großkunden zur Gewährleistung einer zuverlässigen und benutzerfreundlichen mobilen Anwendung.</li>
+              <li>Verwaltung und Umsetzung von Produktanforderungen für zwei Fluggesellschaftskunden, was zur erfolgreichen Einführung der aktualisierten Anwendung bei über 50 Agenten führte. Dies umfasste die Anpassung von Funktionen an Kundenbedürfnisse, die Verbesserung der Benutzererfahrung und die Sicherstellung einer effizienten Systemleistung im gesamten Betrieb des Kunden.</li>
             </ul>
           </div>
           <!-- Cognizant -->
           <div class="timeline-item animate-on-scroll">
-            <p class="timeline-company">Cognizant (Bengaluru, India)</p>
+            <p class="timeline-company">Cognizant (Bengaluru, Indien)</p>
             <h3 class="timeline-role">Java Full Stack Developer Trainee</h3>
-            <p class="timeline-date">Jan 2023 — Jun 2023</p>
+            <p class="timeline-date">Jan. 2023 — Juni 2023</p>
             <ul class="timeline-details">
-              <li>Excelled as a highly skilled Full-stack Java developer trainee, undergoing extensive training in Angular, MySQL, and Spring Boot. Skilfully implemented REST APIs, efficiently utilized MySQL Server, and demonstrated exceptional resilience and organizational abilities, resulting in a notable 25% increase in team productivity and seamless collaboration.</li>
-              <li>Achieved the Common European Framework Equivalent Rank of B2 by getting placed in Level 9 in Step + Assessment, scoring 1239 out of 1581.</li>
-              <li>Led a team of 5 developers in spearheading the development of the Employee Travel Desk Application for the trainee completion project.</li>
+              <li>Erfolgreiche Absolvierung einer umfassenden Ausbildung zum Full-Stack-Java-Entwickler in Angular, MySQL und Spring Boot. Implementierung von REST-APIs, effiziente Nutzung des MySQL-Servers sowie Nachweis hoher Belastbarkeit und Organisationsfähigkeit, was zu einer Steigerung der Teamproduktivität um 25 % und einer nahtlosen Zusammenarbeit führte.</li>
+              <li>Erreichung des B2-Niveaus im Gemeinsamen Europäischen Referenzrahmen durch Einstufung in Level 9 im Step+ Assessment mit einer Punktzahl von 1239 von 1581.</li>
+              <li>Leitung eines Teams von 5 Entwicklern bei der Entwicklung der Employee Travel Desk-Anwendung als Abschlussprojekt der Ausbildung.</li>
             </ul>
           </div>
           <!-- Evoltech -->
           <div class="timeline-item animate-on-scroll">
-            <p class="timeline-company">GFin Tech Solutions (Powered by EvolTech) (Chennai, India)</p>
+            <p class="timeline-company">GFin Tech Solutions (Powered by EvolTech) (Chennai, Indien)</p>
             <h3 class="timeline-role">Technical and Operations Intern</h3>
-            <p class="timeline-date">Feb 2022 — Jun 2022</p>
+            <p class="timeline-date">Feb. 2022 — Juni 2022</p>
             <ul class="timeline-details">
-              <li>Collaborated closely with the CEO and team leads, playing a pivotal role in enhancing functionality, optimizing performance, and implementing innovative solutions in React. This led to the successful execution of projects and an elevated user experience.</li>
-              <li>Demonstrated strong problem-solving skills by restructuring React components based on client requirements and introducing additional features that significantly improved functionality and user experience.</li>
-              <li>Leveraged analytical skills and technical expertise in HTML, CSS, JavaScript, React, and Django to implement a range of innovative solutions and features, ensuring a seamless user interface and interaction.</li>
+              <li>Engste Zusammenarbeit mit dem CEO und den Teamleitern zur Verbesserung der Funktionalität, Optimierung der Performance und Implementierung innovativer Lösungen in React, was zu einer verbesserten Benutzererfahrung beitrug.</li>
+              <li>Demonstration ausgeprägter Problemlösungskompetenz durch Restrukturierung von React-Komponenten basierend auf Kundenanforderungen und Einführung neuer Features zur signifikanten Verbesserung von Funktionalität und UX.</li>
+              <li>Nutzung analytischer Fähigkeiten und technischer Expertise in HTML, CSS, JavaScript, React und Django zur Implementierung innovativer Lösungen und Benutzeroberflächen.</li>
             </ul>
           </div>
           <!-- Softrate Lead -->
           <div class="timeline-item animate-on-scroll">
             <p class="timeline-company">Softrate India</p>
             <h3 class="timeline-role">Web Development Lead</h3>
-            <p class="timeline-date">Jul 2021 — Sep 2021</p>
+            <p class="timeline-date">Juli 2021 — Sept. 2021</p>
             <ul class="timeline-details">
-              <li>Promoted to Lead after a successful internship; managed 3-4 development teams and resolved cycle bottlenecks.</li>
-              <li>Assisted in the recruitment process and technical screening during Softrate's 2021 Internship Drive.</li>
+              <li>Beförderung zum Teamleiter nach erfolgreichem Praktikum; Leitung von 3-4 Entwicklungsteams und Behebung von Engpässen im Entwicklungszyklus.</li>
+              <li>Unterstützung im Rekrutierungsprozess und Durchführung technischer Screenings während des Softrate Internship Drive 2021.</li>
             </ul>
           </div>
           <!-- Softrate Intern -->
           <div class="timeline-item animate-on-scroll">
             <p class="timeline-company">Softrate India</p>
             <h3 class="timeline-role">Web Development Intern</h3>
-            <p class="timeline-date">Mar 2021 — Jul 2021</p>
+            <p class="timeline-date">März 2021 — Juli 2021</p>
             <ul class="timeline-details">
-              <li>Developed the main corporate web portal for Softrate India.</li>
-              <li>Developed the official landing site for the TECHNOVACION'21 IEEE event hosted by Sri Sairam Engineering College.</li>
+              <li>Entwicklung des Hauptportals für Softrate India.</li>
+              <li>Entwicklung der offiziellen Landingpage für das TECHNOVACION'21 IEEE-Event des Sri Sairam Engineering College.</li>
             </ul>
           </div>
         </div>
@@ -325,8 +302,8 @@
     <section class="section-alt" id="skills">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Skills</span>
-          <h2>Technologies I work with</h2>
+          <span class="section-label">Fähigkeiten</span>
+          <h2>Technologien, mit denen ich arbeite</h2>
         </div>
 
         <div class="skills-grid">
@@ -354,12 +331,12 @@
             </div>
           </div>
           <div class="skill-group animate-on-scroll">
-            <h4 class="skill-group-title">Database</h4>
+            <h4 class="skill-group-title">Datenbanken</h4>
             <div class="skill-chips">
               <span class="skill-chip">PostgreSQL</span>
               <span class="skill-chip">MySQL</span>
-              <span class="skill-chip">Database Migration</span>
-              <span class="skill-chip">Query Optimization</span>
+              <span class="skill-chip">Datenbankmigration</span>
+              <span class="skill-chip">Abfrageoptimierung</span>
             </div>
           </div>
           <div class="skill-group animate-on-scroll">
@@ -367,17 +344,17 @@
             <div class="skill-chips">
               <span class="skill-chip">AWS</span>
               <span class="skill-chip">Docker</span>
-              <span class="skill-chip">CI/CD Pipelines</span>
-              <span class="skill-chip">Secure Coding</span>
+              <span class="skill-chip">CI/CD-Pipelines</span>
+              <span class="skill-chip">Sichere Programmierung</span>
             </div>
           </div>
           <div class="skill-group animate-on-scroll">
-            <h4 class="skill-group-title">AI Tools</h4>
+            <h4 class="skill-group-title">KI-Tools</h4>
             <div class="skill-chips">
               <span class="skill-chip">Prompt Engineering</span>
-              <span class="skill-chip">Accurate Prompting</span>
-              <span class="skill-chip">Multimodal Prompting</span>
-              <span class="skill-chip">LLM Workflows</span>
+              <span class="skill-chip">Präzises Prompting</span>
+              <span class="skill-chip">Multimodales Prompting</span>
+              <span class="skill-chip">LLM-Workflows</span>
               <span class="skill-chip">Claude Code</span>
               <span class="skill-chip">Antigravity</span>
               <span class="skill-chip">Abacus.AI</span>
@@ -391,25 +368,25 @@
     <section id="education">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Education</span>
-          <h2>Academic background</h2>
+          <span class="section-label">Ausbildung</span>
+          <h2>Akademischer Werdegang</h2>
         </div>
 
         <div class="education-grid">
           <div class="education-card animate-on-scroll animated-border-card">
             <h3 class="education-institution">Sri Sairam Institute of Technology</h3>
-            <p class="education-degree">B.E. in Computer Science &amp; Engineering</p>
+            <p class="education-degree">B.E. in Informatik</p>
             <div class="education-meta">
               <span>2019 — 2023</span>
-              <span class="gpa">GPA: 8.09</span>
+              <span class="gpa">Note: 8,09 (CGPA)</span>
             </div>
           </div>
           <div class="education-card animate-on-scroll animated-border-card">
             <h3 class="education-institution">P.S. Senior Secondary School</h3>
-            <p class="education-degree">Senior Secondary (XII)</p>
+            <p class="education-degree">Höhere Sekundarschule (Abitur)</p>
             <div class="education-meta">
               <span>2017 — 2019</span>
-              <span class="gpa">GPA: 8.76</span>
+              <span class="gpa">Note: 8,76 (CBSE XII)</span>
             </div>
           </div>
         </div>
@@ -420,8 +397,8 @@
     <section id="certifications">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Certifications</span>
-          <h2>Professional Credentials</h2>
+          <span class="section-label">Zertifikate</span>
+          <h2>Berufliche Zertifizierungen</h2>
         </div>
 
         <div class="certifications-grid">
@@ -429,130 +406,130 @@
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
-              <h3 class="cert-title">Use AI as a Creative or Expert Partner</h3>
-              <p class="cert-date">Issued Jul 2026</p>
+              <h3 class="cert-title">KI als kreativer oder fachlicher Partner nutzen</h3>
+              <p class="cert-date">Ausgestellt Jul 2026</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">QL5II5ZNLI05</span></p>
-              <p class="cert-skills">Skills: Accurate Prompting, Multimodal Prompting</p>
+              <p class="cert-skills">Fähigkeiten: Präzises Prompting, Multimodales Prompting</p>
             </div>
           </div>
           <!-- Cert 2 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
-              <h3 class="cert-title">Design Prompts for Everyday Work Tasks</h3>
-              <p class="cert-date">Issued Jul 2026</p>
+              <h3 class="cert-title">Prompts für alltägliche Arbeitsaufgaben entwerfen</h3>
+              <p class="cert-date">Ausgestellt Jul 2026</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">YX22CYQPWSJ4</span></p>
-              <p class="cert-skills">Skills: Prompt Engineering, Prompt Writing</p>
+              <p class="cert-skills">Fähigkeiten: Prompt Engineering, Prompt Schreiben</p>
             </div>
           </div>
           <!-- Cert 3 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
-              <h3 class="cert-title">Start Writing Prompts like a Pro</h3>
-              <p class="cert-date">Issued Jul 2026</p>
+              <h3 class="cert-title">Prompts schreiben wie ein Profi</h3>
+              <p class="cert-date">Ausgestellt Jul 2026</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">EYZFB72JC6T4</span></p>
-              <p class="cert-skills">Skills: Prompt Engineering, Prompt Writing</p>
+              <p class="cert-skills">Fähigkeiten: Prompt Engineering, Prompt Schreiben</p>
             </div>
           </div>
           <!-- Cert 4 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google</div>
-              <h3 class="cert-title">Foundations of Cybersecurity</h3>
-              <p class="cert-date">Issued Dec 2025</p>
+              <h3 class="cert-title">Grundlagen der Cybersicherheit</h3>
+              <p class="cert-date">Ausgestellt Dec 2025</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">IBA517ZV23NQ</span></p>
-              <p class="cert-skills">Skills: Cybersecurity</p>
+              <p class="cert-skills">Fähigkeiten: Cybersicherheit</p>
             </div>
           </div>
           <!-- Cert 5 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">e-CARGOWARE Ltd</div>
-              <h3 class="cert-title">Certificate of achievement</h3>
-              <p class="cert-date">Issued Aug 2025</p>
+              <h3 class="cert-title">Leistungszertifikat in Angular</h3>
+              <p class="cert-date">Ausgestellt Aug 2025</p>
             </div>
             <div class="cert-meta">
-              <p class="cert-skills">Skills: Angular, AngularJS</p>
+              <p class="cert-skills">Fähigkeiten: Angular, AngularJS</p>
             </div>
           </div>
           <!-- Cert 6 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Google (Coursera)</div>
-              <h3 class="cert-title">Foundations of Data Science</h3>
-              <p class="cert-date">Issued Aug 2024</p>
+              <h3 class="cert-title">Grundlagen der Datenwissenschaft</h3>
+              <p class="cert-date">Ausgestellt Aug 2024</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">ZMVVWM5ENX59</span></p>
-              <p class="cert-skills">Skills: Data Science, Data Analysis</p>
+              <p class="cert-skills">Fähigkeiten: Datenwissenschaft, Datenanalyse</p>
             </div>
           </div>
           <!-- Cert 7 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">ICT Academy</div>
-              <h3 class="cert-title">IBM Nalaiya Thiran Project Certificate</h3>
-              <p class="cert-date">Issued Feb 2023</p>
+              <h3 class="cert-title">IBM Nalaiya Thiran Projektzertifikat</h3>
+              <p class="cert-date">Ausgestellt Feb 2023</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">42d53a5ebdc14deeadb6ffbc4bab50d8</span></p>
-              <p class="cert-skills">Skills: Jira, Teamwork</p>
+              <p class="cert-skills">Fähigkeiten: Jira, Teamarbeit</p>
             </div>
           </div>
           <!-- Cert 8 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Udemy</div>
-              <h3 class="cert-title">Responsive Web Design: HTML5 + CSS3</h3>
-              <p class="cert-date">Issued Feb 2023</p>
+              <h3 class="cert-title">Responsive Webdesign: HTML5 + CSS3</h3>
+              <p class="cert-date">Ausgestellt Feb 2023</p>
             </div>
             <div class="cert-meta">
-              <p class="cert-skills">Skills: HTML5, CSS3</p>
+              <p class="cert-skills">Fähigkeiten: HTML5, CSS3</p>
             </div>
           </div>
           <!-- Cert 9 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Udemy</div>
-              <h3 class="cert-title">Build a Backend REST API with Python &amp; Django</h3>
-              <p class="cert-date">Issued Dec 2022</p>
+              <h3 class="cert-title">REST-API mit Python &amp; Django entwickeln</h3>
+              <p class="cert-date">Ausgestellt Dec 2022</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">UC-a1877d4e-180e-4676-b273-77ade9ccd020</span></p>
-              <p class="cert-skills">Skills: Python, Django, REST API</p>
+              <p class="cert-skills">Fähigkeiten: Python, Django, REST API</p>
             </div>
           </div>
           <!-- Cert 10 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">Udemy</div>
-              <h3 class="cert-title">Python Django Dev To Deployment</h3>
-              <p class="cert-date">Issued Oct 2022</p>
+              <h3 class="cert-title">Python Django von der Entwicklung bis zum Deployment</h3>
+              <p class="cert-date">Ausgestellt Oct 2022</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">UC-d15a44be-952d-45f8-8ae9-bb9890a6a305</span></p>
-              <p class="cert-skills">Skills: Python (Programming Language), HTML</p>
+              <p class="cert-skills">Fähigkeiten: Python, HTML</p>
             </div>
           </div>
           <!-- Cert 11 -->
           <div class="cert-card animate-on-scroll animated-border-card">
             <div>
               <div class="cert-issuer">HCL GUVI</div>
-              <h3 class="cert-title">Modern HTML &amp; CSS</h3>
-              <p class="cert-date">Issued Feb 2022</p>
+              <h3 class="cert-title">Modernes HTML &amp; CSS</h3>
+              <p class="cert-date">Ausgestellt Feb 2022</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">U7636D433Em5774u1z</span></p>
-              <p class="cert-skills">Skills: HTML</p>
+              <p class="cert-skills">Fähigkeiten: HTML</p>
             </div>
           </div>
           <!-- Cert 12 -->
@@ -560,7 +537,7 @@
             <div>
               <div class="cert-issuer">Forage</div>
               <h3 class="cert-title">Accenture Nordic Developer Program</h3>
-              <p class="cert-date">Issued May 2021</p>
+              <p class="cert-date">Ausgestellt May 2021</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">yC5Au7KGSTJfwgC8</span></p>
@@ -571,11 +548,11 @@
             <div>
               <div class="cert-issuer">Forage</div>
               <h3 class="cert-title">JPMorgan Chase Software Engineering</h3>
-              <p class="cert-date">Issued Aug 2020</p>
+              <p class="cert-date">Ausgestellt Aug 2020</p>
             </div>
             <div class="cert-meta">
               <p>ID: <span class="cert-id">3sDC9vT2RPWrNJqQ9</span></p>
-              <p class="cert-skills">Skills: HTML</p>
+              <p class="cert-skills">Fähigkeiten: HTML</p>
             </div>
           </div>
         </div>
@@ -586,8 +563,8 @@
     <section class="section-alt" id="achievements">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Achievements</span>
-          <h2>Milestones &amp; recognition</h2>
+          <span class="section-label">Erfolge</span>
+          <h2>Meilensteine &amp; Anerkennung</h2>
         </div>
 
         <div class="achievements-grid">
@@ -595,9 +572,9 @@
           <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🏆</div>
             <div class="achievement-info">
-              <p class="achievement-date">Aug 2022</p>
-              <h3>Winner of Smart India Hackathon</h3>
-              <p>Designed and built a <strong>Fog Prediction System</strong> using Amazon cloud tools to address critical flight and transport safety issues. Leveraging predictive analytics and real-time weather data streams, the system provides early warning indicators to help prevent weather-related accidents in aviation and ground transport.</p>
+              <p class="achievement-date">Aug. 2022</p>
+              <h3>Gewinner des Smart India Hackathons</h3>
+              <p>Konzeption und Entwicklung eines <strong>Nebelvorhersagesystems</strong> unter Verwendung von Amazon Web Services, um kritische Verkehrs- und Flugsicherheitsfragen zu lösen. Das System nutzt meteorologische Datenströme und Vorhersageanalysen, um Frühwarnungen zur Vermeidung wetterbedingter Unfälle auszugeben.</p>
             </div>
           </div>
 
@@ -605,9 +582,9 @@
           <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">⭐</div>
             <div class="achievement-info">
-              <p class="achievement-date">Oct 2021</p>
-              <h3>Best Employee Award (Web Development)</h3>
-              <p>Recognized by <strong>Softrate India</strong> for exceptional performance, prompt delivery, and technical dedication in implementing and shipping production-grade web applications.</p>
+              <p class="achievement-date">Okt. 2021</p>
+              <h3>Best Employee Award (Webentwicklung)</h3>
+              <p>Ausgezeichnet von <strong>Softrate India</strong> für hervorragende Leistungen, pünktliche Bereitstellung und technisches Engagement beim Implementieren und Ausliefern produktiver Webanwendungen.</p>
             </div>
           </div>
 
@@ -615,9 +592,9 @@
           <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🥉</div>
             <div class="achievement-info">
-              <p class="achievement-date">Apr 2021</p>
-              <h3>Ideathon — 2nd Runner Up</h3>
-              <p>Awarded 2nd runner up at the national-level Ideathon organized by <strong>Sri Sairam Institute of Technology</strong> for pitching an innovative solution to address systemic efficiency bottlenecks.</p>
+              <p class="achievement-date">Apr. 2021</p>
+              <h3>Ideathon — 3. Platz</h3>
+              <p>Ausgezeichnet beim nationalen Ideathon des <strong>Sri Sairam Institute of Technology</strong> für das Pitchen einer innovativen Systemlösung zur Behebung betrieblicher Engpässe.</p>
             </div>
           </div>
 
@@ -625,9 +602,9 @@
           <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🏅</div>
             <div class="achievement-info">
-              <p class="achievement-date">Nov 2020</p>
-              <h3>Top 10 in Contest of Interactive Login Forms</h3>
-              <p>Secured a top 10 position in a global front-end challenge hosted by <strong>Html Hints</strong> for designing and coding highly interactive, accessible, and creative user login experiences.</p>
+              <p class="achievement-date">Nov. 2020</p>
+              <h3>Top 10 beim Wettbewerb für interaktive Login-Formulare</h3>
+              <p>Platzierung in den weltweiten Top 10 bei einer Front-End-Challenge von <strong>Html Hints</strong> für den Entwurf hochgradig interaktiver, barrierefreier und kreativer Login-Masken.</p>
             </div>
           </div>
 
@@ -635,9 +612,9 @@
           <div class="achievement-card animate-on-scroll animated-border-card">
             <div class="achievement-icon">🎓</div>
             <div class="achievement-info">
-              <p class="achievement-date">Aug 2019</p>
-              <h3>Best Project Award in Informatics Practices</h3>
-              <p>Awarded by <strong>P.S. Senior Secondary School</strong> for engineering an Integrated Social Media System in Java, simulating email communications, search indexes, and group chats.</p>
+              <p class="achievement-date">Aug. 2019</p>
+              <h3>Best Project Award in Informatik-Praxis</h3>
+              <p>Verliehen von der <strong>P.S. Senior Secondary School</strong> für die Entwicklung eines integrierten sozialen Netzwerks in Java zur Simulation von E-Mail-Kommunikation, Suchindizes und Gruppenchats.</p>
             </div>
           </div>
         </div>
@@ -648,51 +625,51 @@
     <section class="section-alt" id="leadership">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Leadership</span>
-          <h2>Community &amp; initiative</h2>
+          <span class="section-label">Führung</span>
+          <h2>Community &amp; Initiative</h2>
         </div>
 
         <div class="leadership-grid">
           <!-- Item 1 -->
           <div class="leadership-card animate-on-scroll animated-border-card">
             <div>
-              <p class="leadership-date">Sep 2022 — Present</p>
+              <p class="leadership-date">Sep. 2022 — Heute</p>
               <h3 class="leadership-title">Nutpam 2K22</h3>
-              <p class="leadership-role">Chairman</p>
+              <p class="leadership-role">Vorsitzender</p>
             </div>
-            <p class="leadership-desc">Elected as Chairman for Nutpam 2K22, the official Computer Science department symposium. Managed event budgets, coordinated speaker panels, and led the organizing committee for the annual student gathering.</p>
+            <p class="leadership-desc">Gewählt zum Vorsitzenden für Nutpam 2K22, das offizielle Symposium der Informatikabteilung. Verantwortung für Budgetplanung, Koordination von Rednern und Leitung des studentischen Organisationskomitees.</p>
           </div>
 
           <!-- Item 2 -->
           <div class="leadership-card animate-on-scroll animated-border-card">
             <div>
-              <p class="leadership-date">Sep 2022 — Present</p>
+              <p class="leadership-date">Sep. 2022 — Heute</p>
               <h3 class="leadership-title">TEDxSriSairamIT</h3>
               <p class="leadership-role">Executive Director</p>
             </div>
-            <p class="leadership-desc">Appointed Executive Director for the official TEDx program. Coordinated event logistics and spearheaded the development of the dynamic website using Django and PostgreSQL hosted on Render.</p>
+            <p class="leadership-desc">Ernennung zum Executive Director für das offizielle TEDx-Programm. Koordination der Event-Logistik und Leitung der Entwicklung des dynamischen Internetportals unter Verwendung von Django und PostgreSQL gehostet auf Render.</p>
           </div>
 
           <!-- Item 3 -->
           <div class="leadership-card animate-on-scroll animated-border-card">
             <div>
-              <p class="leadership-date">Aug 2021 — Jul 2022</p>
+              <p class="leadership-date">Aug. 2021 — Juli 2022</p>
               <h3 class="leadership-title">Google DSC Sri Sairam</h3>
               <p class="leadership-role">Management Lead</p>
             </div>
-            <p class="leadership-desc">Managed and coordinated all technical events and workshops conducted by technical leads. Facilitated inter-departmental collaboration, monitored engagement metrics, and managed team logistics.</p>
+            <p class="leadership-desc">Leitung und Koordination aller technischen Events und Workshops. Förderung abteilungsübergreifender Kooperationen, Überwachung von Interaktionskennzahlen und Steuerung der Teamlogistik.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BEYOND THE CODE (PERSONAL) -->
+    <!-- BEYOND THE CODE -->
     <section id="personal">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Personal</span>
-          <h2>Beyond the code</h2>
-          <p>A quick glimpse into what keeps me inspired when I'm not architecting software.</p>
+          <span class="section-label">Persönliches</span>
+          <h2>Abseits des Codes</h2>
+          <p>Ein kurzer Blick darauf, was mich inspiriert, wenn ich nicht gerade Software entwickle.</p>
         </div>
 
         <div class="personal-grid">
@@ -700,8 +677,8 @@
           <div class="personal-card animate-on-scroll animated-border-card">
             <div class="personal-icon">📚</div>
             <div class="personal-info">
-              <h3>Favorite Books</h3>
-              <p>I love getting lost in fantasy worlds. My absolute favorites include the <strong>Harry Potter</strong> series, the <strong>Percy Jackson</strong> universe (including <strong>Heroes of Olympus</strong>), and the epic <strong>Eragon</strong> trilogy.</p>
+              <h3>Lieblingsbücher</h3>
+              <p>Ich liebe es, in Fantasywelten einzutauchen. Meine absoluten Favoriten sind die Reihen um <strong>Harry Potter</strong>, das <strong>Percy-Jackson-Universum</strong> (einschließlich Helden des Olymp) und die <strong>Eragon-Saga</strong>.</p>
             </div>
           </div>
 
@@ -709,8 +686,8 @@
           <div class="personal-card animate-on-scroll animated-border-card">
             <div class="personal-icon">🎬</div>
             <div class="personal-info">
-              <h3>Movies &amp; Anime</h3>
-              <p>I am a massive Anime fan: <strong>Naruto, One Piece, Haikyuu, Demon Slayer, One Punch Man, Chainsaw Man,</strong> and <strong>Death Note</strong>. For live-action, <strong>Harry Potter</strong> and <strong>Avatar</strong> are my top picks.</p>
+              <h3>Filme &amp; Anime</h3>
+              <p>Ich bin ein großer Anime-Fan: <strong>Naruto, One Piece, Haikyuu, Demon Slayer, One Punch Man, Chainsaw Man</strong> und <strong>Death Note</strong>. Im Realfilm-Bereich gehören <strong>Harry Potter</strong> und <strong>Avatar</strong> zu meinen Favoriten.</p>
             </div>
           </div>
 
@@ -718,8 +695,8 @@
           <div class="personal-card animate-on-scroll animated-border-card">
             <div class="personal-icon">☕</div>
             <div class="personal-info">
-              <h3>Hobbies</h3>
-              <p>When I'm entirely disconnected from technology, you'll usually find me quietly <strong>reading a good book</strong> and recharging.</p>
+              <h3>Hobbys</h3>
+              <p>Wenn ich mich völlig von der Technik abkoppeln möchte, lese ich meistens gemütlich ein gutes Buch, um meine Batterien aufzuladen.</p>
             </div>
           </div>
         </div>
@@ -730,45 +707,39 @@
     <section id="contact">
       <div class="container">
         <div class="section-title animate-on-scroll">
-          <span class="section-label">Contact</span>
-          <h2>Let's work together</h2>
-          <p>Reach out for collaborations, recruitment, or to simply connect. I'd love to hear from you.</p>
+          <span class="section-label">Kontakt</span>
+          <h2>Lassen Sie uns zusammenarbeiten</h2>
+          <p>Schreiben Sie mir bezüglich Kooperationen, Stellenangeboten oder um sich einfach zu vernetzen. Ich freue mich von Ihnen zu hören.</p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-info animate-on-scroll">
             <div class="contact-item">
               <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
               </div>
               <div>
-                <p class="contact-item-label">Email</p>
+                <p class="contact-item-label">E-Mail</p>
                 <p class="contact-item-value"><a href="mailto:mukund.rs.2001@gmail.com">mukund.rs.2001@gmail.com</a></p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                 </svg>
               </div>
               <div>
                 <p class="contact-item-label">GitHub</p>
-                <p class="contact-item-value"><a href="https://github.com/mukund-9652" target="_blank"
-                    rel="noopener">github.com/mukund-9652</a></p>
+                <p class="contact-item-value"><a href="https://github.com/mukund-9652" target="_blank" rel="noopener">github.com/mukund-9652</a></p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
@@ -776,22 +747,20 @@
               </div>
               <div>
                 <p class="contact-item-label">LinkedIn</p>
-                <p class="contact-item-value"><a href="https://www.linkedin.com/in/mukundrs/" target="_blank"
-                    rel="noopener">linkedin.com/in/mukundrs</a></p>
+                <p class="contact-item-value"><a href="https://www.linkedin.com/in/mukundrs/" target="_blank" rel="noopener">linkedin.com/in/mukundrs</a></p>
               </div>
             </div>
           </div>
 
           <form class="contact-form animate-on-scroll" name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact">
-            <input class="form-input" type="text" name="name" id="f_name" placeholder="Your name" required>
-            <input class="form-input" type="email" name="email" id="email" placeholder="Your email" required>
-            <textarea class="form-textarea" name="message" placeholder="Your message" rows="5" required></textarea>
+            <input class="form-input" type="text" name="name" id="f_name" placeholder="Ihr Name" required>
+            <input class="form-input" type="email" name="email" id="email" placeholder="Ihre E-Mail" required>
+            <textarea class="form-textarea" name="message" placeholder="Ihre Nachricht" rows="5" required></textarea>
             <div data-netlify-recaptcha="true"></div>
             <button type="submit" class="btn btn-primary">
-              Send Message
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+              Nachricht senden
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
@@ -803,22 +772,19 @@
 
   </main>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Mukund R S. Crafted with precision.</p>
+      <p>&copy; 2026 Mukund R S. Mit Präzision gefertigt.</p>
       <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.7; font-weight: 500;">
-        Entirely designed, developed, and illustrated using advanced AI Prompt Engineering with the help of Gemini Banana and Antigravity.
+        Komplett entworfen, entwickelt und illustriert mittels fortgeschrittenem KI-Prompt-Engineering mit Hilfe von Gemini Banana und Antigravity.
       </p>
     </div>
   </footer>
 
-  <!-- Auto Scroll Mobile Widget -->
+  <!-- Mobile Auto-Scroll Widget -->
   <div class="auto-scroll-widget" id="autoScrollWidget">
-    <!-- Left: Theme Toggle (Mobile) -->
-    <button class="scroll-btn mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle Theme">
+    <button class="scroll-btn mobile-theme-toggle" id="mobileThemeToggle" aria-label="Theme umschalten">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="5"></circle>
         <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -832,7 +798,7 @@
       </svg>
     </button>
 
-    <button class="scroll-btn toggle-scroll" id="toggleScrollBtn" aria-label="Play/Pause Auto Scroll">
+    <button class="scroll-btn toggle-scroll" id="toggleScrollBtn" aria-label="Auto-Scroll abspielen/pausieren">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
         <polygon points="5 3 19 12 5 21 5 3"></polygon>
       </svg>
@@ -842,14 +808,13 @@
       <button class="scroll-btn speed-btn" data-speed="2">2x</button>
       <button class="scroll-btn speed-btn" data-speed="3">3x</button>
     </div>
-    <button class="scroll-btn min-max-btn" id="minMaxBtn" aria-label="Minimize/Maximize">
+    <button class="scroll-btn min-max-btn" id="minMaxBtn" aria-label="Minimieren/Maximieren">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="5" y1="12" x2="19" y2="12"></line>
       </svg>
     </button>
 
-    <!-- Right: Animation Toggle (Mobile) -->
-    <button class="scroll-btn mobile-aesthetics-toggle" id="mobileAestheticsToggle" aria-label="Toggle Animations">
+    <button class="scroll-btn mobile-aesthetics-toggle" id="mobileAestheticsToggle" aria-label="Animationen umschalten">
       <svg class="mob-icon-advanced" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"></path>
         <path d="M19 13l.75 2.25L22 16l-2.25.75L19 19l-.75-2.25L16 16l2.25-.75L19 13z"></path>
@@ -860,8 +825,8 @@
     </button>
   </div>
 
-  <!-- Scroll to Top Button (All Devices) -->
-  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to Top">
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Nach oben scrollen">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
